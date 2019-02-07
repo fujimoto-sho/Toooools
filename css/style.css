@@ -210,3 +210,43 @@ input, select {
 .pagination-item-now a {
   color: #fff;
 }
+
+/*===============================
+ * form
+ *=============================*/
+.form-container {
+  border: 5px solid #f1f1f1;
+  width: 600px;
+  margin: 0 auto;
+}
+.form {
+  width: 80%;
+  margin: 20px auto;
+}
+.form-title {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.input-msg {
+  color: #FF4F50;
+}
+.form-label {
+  display: block;
+  margin-bottom: 20px;
+}
+.form-label input[type="text"],
+.form-label input[type="password"] {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #f6f5f5;
+  padding: 5px;
+  border: none;
+}
+.form-submit {
+  width: 100%;
+  height: 40px;
+  background-color: #FFCC66;
+  border: none;
+  margin-top: 40px;
+}
