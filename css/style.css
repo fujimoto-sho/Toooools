@@ -232,6 +232,7 @@ input, select {
 }
 .form-label {
   display: block;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .form-label input[type="text"],
@@ -249,4 +250,18 @@ input, select {
   background-color: #FFCC66;
   border: none;
   margin-top: 40px;
+}
+.form-label-checkbox input,
+.form-label-checkbox span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.form-link-list {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.form-p {
+  font-size: 1.4rem;
+  text-align: center;
 }
