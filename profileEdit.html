@@ -23,26 +23,51 @@
     <!-- フォーム -->
     <div class="form-container">
       <form class="form" method="post">
-        <h1 class="form-title">パスワード再設定</h1>
-        
-        <!-- パスワード -->
+        <h1 class="form-title">プロフィール編集</h1>
+
+        <!-- Email -->
         <div class="input-msg">
         </div>
         <label class="form-label">
-          新しいパスワード
-          <input type="password" name="email" id="" placeholder="英数字6文字以上">
+          Email
+          <input type="text" name="email" id="">
         </label>
 
-        <!-- パスワード（再入力）-->
+        <!-- ユーザー名 -->
         <div class="input-msg">
         </div>
         <label class="form-label">
-          新しいパスワード（再入力）
-          <input type="password" name="email" id="" placeholder="英数字6文字以上">
+          ユーザー名
+          <input type="text" name="email" id="">
         </label>
 
+        <!-- 一番お気に入りのツール -->
+        <div class="input-msg">
+        </div>
+        <label class="form-label">
+          一番お気に入りのツール
+          <input type="password" name="email" id="" placeholder="">
+        </label>
 
-        <input type="submit" class="form-btn" value="登録">
+        <!-- 自己紹介 -->
+        <div class="input-msg">
+        </div>
+        <label class="form-label">
+          自己紹介
+          <textarea name="" id="" cols="30" rows="5"></textarea>
+        </label>
+
+        <!-- プロフィール画像 -->
+        <div class="input-msg">
+        </div>
+        <label class="form-label form-label-file">
+          プロフィール画像
+          <div class="form-input-file">
+            <input type="file" name="" id="" hidden>
+          </div>
+        </label>
+
+        <input type="submit" class="form-btn" value="変更">
       </form>
     </div>
   </main>
@@ -51,5 +76,12 @@
   <footer class="footer">
     Copyright fujisho All Rights Reserved.
   </footer>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script>
+    $(function() {
+
+    });
+  </script>
 </body>
 </html>
