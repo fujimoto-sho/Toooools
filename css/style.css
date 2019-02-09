@@ -30,7 +30,7 @@ a {
   width: 980px;
   margin: 0 auto;
 }
-input, select {
+input, select,textarea {
   font-size: 1.6rem;
   display: block;
 }
@@ -88,7 +88,9 @@ input, select {
 /*===============================
  * main
  *=============================*/
-
+.main {
+  margin-bottom: 50px;
+}
 /*===============================
  * search 
  *=============================*/
@@ -236,15 +238,19 @@ input, select {
   margin-bottom: 20px;
 }
 .form-label input[type="text"],
-.form-label input[type="password"] {
-  display: block;
+.form-label input[type="password"],
+.form-label textarea {
   width: 100%;
   height: 40px;
   background-color: #f6f5f5;
   padding: 5px;
   border: none;
 }
-.form-submit {
+.form-label textarea {
+  height: auto;
+  resize: none;
+}
+.form-btn {
   width: 100%;
   height: 40px;
   background-color: #FFCC66;
@@ -264,4 +270,19 @@ input, select {
 .form-p {
   font-size: 1.4rem;
   text-align: center;
+}
+.form-input-file {
+  width: 150px;
+  height: 150px;
+}
+.form-label-file {
+  width: 150px;
+  height: 150px;
+  background-color: #f6f5f5;
+  text-align: center;
+  line-height: 150px;
+  font-size: 1.2rem;
+}
+.form-label-file input[type="file"] {
+  display: none;
 }

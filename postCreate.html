@@ -23,26 +23,35 @@
     <!-- フォーム -->
     <div class="form-container">
       <form class="form" method="post">
-        <h1 class="form-title">パスワード再設定</h1>
-        
-        <!-- パスワード -->
+        <h1 class="form-title">新規投稿</h1>
+
+        <!-- ツール名 -->
         <div class="input-msg">
         </div>
         <label class="form-label">
-          新しいパスワード
-          <input type="password" name="email" id="" placeholder="英数字6文字以上">
+          ツール名
+          <input type="password" name="email" id="" placeholder="">
         </label>
 
-        <!-- パスワード（再入力）-->
+        <!-- ツール紹介 -->
         <div class="input-msg">
         </div>
         <label class="form-label">
-          新しいパスワード（再入力）
-          <input type="password" name="email" id="" placeholder="英数字6文字以上">
+          ツール紹介
+          <textarea name="" id="" cols="30" rows="5"></textarea>
         </label>
 
+        <!-- ツール画像 -->
+        <div class="input-msg">
+        </div>
+        <label class="form-label form-label-file">
+          ツール画像
+          <div class="form-input-file">
+            <input type="file" name="" id="" hidden>
+          </div>
+        </label>
 
-        <input type="submit" class="form-btn" value="登録">
+        <input type="submit" class="form-btn" value="投稿">
       </form>
     </div>
   </main>
@@ -51,5 +60,12 @@
   <footer class="footer">
     Copyright fujisho All Rights Reserved.
   </footer>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script>
+    $(function() {
+
+    });
+  </script>
 </body>
 </html>
