@@ -1,0 +1,723 @@
+[12-Feb-2019 20:48:55 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:48:55 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 20:48:55 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:48:55 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 20:48:55 Asia/Tokyo] PHP Notice:  Array to string conversion in /Applications/MAMP/htdocs/toooools/signup.php on line 14
+[12-Feb-2019 20:48:55 Asia/Tokyo] PHP Stack trace:
+[12-Feb-2019 20:48:55 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[12-Feb-2019 20:48:55 Asia/Tokyo] デバッグ：POST：Array
+[12-Feb-2019 20:48:55 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 20:48:55 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 20:49:43 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:49:43 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 20:49:43 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:49:43 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 20:49:43 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aaaaa
+    [name] => a
+    [pass] => aaaa
+    [pass_re] => aaaa
+)
+
+[12-Feb-2019 20:49:43 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 20:49:43 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 20:56:44 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:56:44 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 20:56:44 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:56:44 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 20:56:44 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aaaaa
+    [name] => a
+    [pass] => aaaa
+    [pass_re] => aaaa
+)
+
+[12-Feb-2019 20:56:44 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 20:56:44 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 20:56:50 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:56:50 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 20:56:50 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:56:50 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 20:56:50 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aaaaa
+    [name] => a
+    [pass] => aaaa
+    [pass_re] => aaaa
+)
+
+[12-Feb-2019 20:56:50 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 20:56:50 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 20:56:51 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:56:51 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 20:56:51 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 20:56:51 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 20:56:51 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aaaaa
+    [name] => a
+    [pass] => aaaa
+    [pass_re] => aaaa
+)
+
+[12-Feb-2019 20:56:51 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 20:56:51 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:01:45 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:01:45 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:01:45 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:01:45 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:01:45 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aaaaa
+    [name] => a
+    [pass] => aaaa
+    [pass_re] => aaaa
+)
+
+[12-Feb-2019 21:01:55 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:01:55 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:01:55 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:01:55 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:01:55 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aaaaa
+    [name] => a
+    [pass] => aaaa
+    [pass_re] => aaaa
+)
+
+[12-Feb-2019 21:01:55 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:01:55 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:02:13 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:02:13 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:02:13 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:02:13 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:02:13 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:02:13 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:02:13 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:02:13 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:02:58 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:02:58 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:02:58 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:02:58 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:02:58 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:02:58 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:02:58 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:02:58 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:04:11 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:04:11 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:04:11 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:04:11 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:04:11 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:04:11 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:04:11 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:04:11 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:04:12 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:04:12 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:04:12 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:04:12 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:04:12 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:04:12 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:04:12 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:04:12 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:05:15 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:05:15 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:05:15 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:05:15 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:05:15 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:05:52 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:07:05 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[12-Feb-2019 21:07:05 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:07:11 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:07:11 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:07:11 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:07:11 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:07:11 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:07:11 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2002] No such file or directory
+[12-Feb-2019 21:07:11 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2002] No such file or directory
+[12-Feb-2019 21:07:11 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:07:12 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:07:12 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:07:12 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:07:12 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:07:12 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:07:12 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2002] No such file or directory
+[12-Feb-2019 21:07:12 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2002] No such file or directory
+[12-Feb-2019 21:07:12 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:07:55 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:07:55 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:07:55 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:07:55 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:07:55 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:07:55 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:07:55 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2002] No such file or directory
+[12-Feb-2019 21:07:55 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:07:55 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2002] No such file or directory
+[12-Feb-2019 21:07:55 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:08:25 Asia/Tokyo] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /Applications/MAMP/htdocs/toooools/function.php on line 164
+[12-Feb-2019 21:08:25 Asia/Tokyo] PHP Stack trace:
+[12-Feb-2019 21:08:25 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[12-Feb-2019 21:08:25 Asia/Tokyo] PHP   2. queryPost() /Applications/MAMP/htdocs/toooools/signup.php:61
+[12-Feb-2019 21:08:25 Asia/Tokyo] PHP   3. PDOStatement->execute() /Applications/MAMP/htdocs/toooools/function.php:164
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：クエリ失敗
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：失敗したクエリ：PDOStatement Object
+(
+    [queryString] => INSERT INTO users (user_name, email, password, created_at) VALUES (:name, :email, :pass, :date)
+)
+
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：クエリ失敗
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：失敗したSQL：INSERT INTO users (user_name, email, password, created_at) VALUES (:name, :email, :pass, :date)
+[12-Feb-2019 21:08:25 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：バリデーションOK
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:10:10 Asia/Tokyo] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /Applications/MAMP/htdocs/toooools/function.php on line 164
+[12-Feb-2019 21:10:10 Asia/Tokyo] PHP Stack trace:
+[12-Feb-2019 21:10:10 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[12-Feb-2019 21:10:10 Asia/Tokyo] PHP   2. queryPost() /Applications/MAMP/htdocs/toooools/signup.php:64
+[12-Feb-2019 21:10:10 Asia/Tokyo] PHP   3. PDOStatement->execute() /Applications/MAMP/htdocs/toooools/function.php:164
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：クエリ失敗
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：失敗したクエリ：PDOStatement Object
+(
+    [queryString] => INSERT INTO users (user_name, email, password, created_at) VALUES (:name, :email, :pass, :date)
+)
+
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：クエリ失敗
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：失敗したSQL：INSERT INTO users (user_name, email, password, created_at) VALUES (:name, :email, :pass, :date)
+[12-Feb-2019 21:10:10 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：バリデーションOK
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:10:12 Asia/Tokyo] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /Applications/MAMP/htdocs/toooools/function.php on line 164
+[12-Feb-2019 21:10:12 Asia/Tokyo] PHP Stack trace:
+[12-Feb-2019 21:10:12 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[12-Feb-2019 21:10:12 Asia/Tokyo] PHP   2. queryPost() /Applications/MAMP/htdocs/toooools/signup.php:64
+[12-Feb-2019 21:10:12 Asia/Tokyo] PHP   3. PDOStatement->execute() /Applications/MAMP/htdocs/toooools/function.php:164
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：クエリ失敗
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：失敗したクエリ：PDOStatement Object
+(
+    [queryString] => INSERT INTO users (user_name, email, password, created_at) VALUES (:name, :email, :pass, :date)
+)
+
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：クエリ失敗
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：失敗したSQL：INSERT INTO users (user_name, email, password, created_at) VALUES (:name, :email, :pass, :date)
+[12-Feb-2019 21:10:12 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：バリデーションOK
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:11:24 Asia/Tokyo] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /Applications/MAMP/htdocs/toooools/function.php on line 164
+[12-Feb-2019 21:11:24 Asia/Tokyo] PHP Stack trace:
+[12-Feb-2019 21:11:24 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[12-Feb-2019 21:11:24 Asia/Tokyo] PHP   2. queryPost() /Applications/MAMP/htdocs/toooools/signup.php:64
+[12-Feb-2019 21:11:24 Asia/Tokyo] PHP   3. PDOStatement->execute() /Applications/MAMP/htdocs/toooools/function.php:164
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：クエリ失敗
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：失敗したクエリ：PDOStatement Object
+(
+    [queryString] => INSERT INTO users (user_name, email, password, created_at) VALUES (:name, :email, :pass, :date)
+)
+
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：ユーザー登録失敗
+[12-Feb-2019 21:11:24 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：バリデーションOK
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：ユーザー登録成功
+[12-Feb-2019 21:11:52 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:06:18 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:18 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:06:18 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:18 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:06:18 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 23:06:18 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:06:18 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:06:18 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:06:18 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:06:32 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:32 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:06:32 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:32 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:06:32 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 23:06:32 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:06:32 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:06:32 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:06:32 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:06:40 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:40 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:06:40 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:40 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:06:40 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => 
+    [pass] => aaaaaa
+    [pass_re] => aaaaaa
+)
+
+[12-Feb-2019 23:06:40 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:06:48 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:48 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:06:48 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:48 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:06:48 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => 
+    [name] => 
+    [pass] => 
+    [pass_re] => 
+)
+
+[12-Feb-2019 23:06:48 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:06:56 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:56 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:06:56 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:06:56 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:06:56 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aa
+    [name] => 
+    [pass] => 
+    [pass_re] => 
+)
+
+[12-Feb-2019 23:06:56 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:07:03 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:07:03 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:07:03 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:07:03 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:07:03 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aa
+    [name] => a
+    [pass] => a
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:07:03 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:07:03 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:07:03 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 23:07:03 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:07:24 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:07:24 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:07:24 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:07:24 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:07:24 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aa
+    [name] => a
+    [pass] => a
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:07:24 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:07:24 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:07:24 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 23:07:24 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:07:28 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:07:28 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:07:28 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:07:28 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:07:28 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aa
+    [name] => a
+    [pass] => a
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:07:28 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:07:28 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:07:28 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 23:07:28 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:07:41 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:07:41 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:07:41 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:07:41 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:07:41 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    [name] => a
+    [pass] => a
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:07:41 Asia/Tokyo] PHP Notice:  Undefined variable: min in /Applications/MAMP/htdocs/toooools/function.php on line 82
+[12-Feb-2019 23:07:41 Asia/Tokyo] PHP Stack trace:
+[12-Feb-2019 23:07:41 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[12-Feb-2019 23:07:41 Asia/Tokyo] PHP   2. validMaxLen() /Applications/MAMP/htdocs/toooools/signup.php:32
+[12-Feb-2019 23:07:41 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:07:41 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:07:41 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 23:07:41 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:08:12 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:12 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:08:12 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:12 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:08:12 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    [name] => a
+    [pass] => a
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:08:12 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:08:12 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:08:12 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 23:08:12 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:08:18 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:18 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:08:18 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:18 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:08:18 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => aaa
+    [name] => a
+    [pass] => a
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:08:18 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:08:18 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:08:18 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 23:08:18 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:08:29 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:29 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:08:29 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:29 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:08:29 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => a
+    [pass] => a
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:08:29 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:08:29 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:08:29 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:08:29 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:08:39 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:39 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:08:39 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:39 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:08:39 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa a
+    [pass] => a
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:08:39 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:08:39 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:08:39 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:08:39 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:08:51 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:51 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:08:51 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:08:51 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:08:51 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => aaa
+    [pass] => aaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa a
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:08:51 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:08:51 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:08:51 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:08:51 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:09:08 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:08 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:09:08 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:08 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:09:08 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => aaaあああああああ
+    [pass] => aaaあああああああ
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:09:08 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:09:08 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:09:08 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:09:08 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:09:10 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:10 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:09:10 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:10 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:09:10 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => aaaあああああああ
+    [pass] => aaaあああああああ
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:09:10 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:09:10 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:09:10 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:09:10 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:09:22 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:22 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:09:22 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:22 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:09:22 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => aaaあああああああああ
+    [pass] => aaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaaaaaaaaa
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:09:22 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:09:22 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:09:22 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:09:22 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:09:23 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:23 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:09:23 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:23 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:09:23 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => aaaあああああああああ
+    [pass] => aaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaあああああああaaaaaaaaaaa
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:09:23 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:09:23 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:09:23 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:09:23 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:09:35 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:35 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:09:35 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:35 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:09:35 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a　aaaaaaaaaaaaaaaaaaa
+    [name] => aaaあああああああああ
+    [pass] => aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:09:35 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:09:35 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:09:35 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 23:09:35 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:09:51 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:51 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:09:51 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:09:51 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:09:51 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => aaaあああああああああ
+    [pass] => aaa
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:09:51 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:09:51 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:09:51 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:09:51 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:10:03 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:10:03 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:10:03 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:10:03 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:10:03 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => a@a.a
+    [name] => aaaあああああああああ
+    [pass] => aaaaaa
+    [pass_re] => a
+)
+
+[12-Feb-2019 23:10:03 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:10:03 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:10:03 Asia/Tokyo] デバッグ：メールアドレス重複あり
+[12-Feb-2019 23:10:03 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:10:17 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:10:17 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:10:17 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:10:17 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:10:17 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => b@b.b
+    [name] => bbbbbb
+    [pass] => bbbbbb
+    [pass_re] => b
+)
+
+[12-Feb-2019 23:10:17 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:10:17 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:10:17 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 23:10:17 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：POST：Array
+(
+    [email] => b@b.b
+    [name] => bbbbbb
+    [pass] => bbbbbb
+    [pass_re] => bbbbbb
+)
+
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：メールアドレス重複なし
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：バリデーションOK
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：データベースに接続
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：クエリ成功
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：ユーザー登録成功
+[12-Feb-2019 23:10:21 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
