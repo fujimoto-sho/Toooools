@@ -1,0 +1,145 @@
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP Notice:  Undefined variable: debugLogWrite in /Applications/MAMP/htdocs/toooools/function.php on line 34
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   2. debugLogTitle() /Applications/MAMP/htdocs/toooools/signup.php:9
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   3. debugLog() /Applications/MAMP/htdocs/toooools/function.php:39
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP Notice:  Undefined variable: debugLogWrite in /Applications/MAMP/htdocs/toooools/function.php on line 34
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   2. debugLogTitle() /Applications/MAMP/htdocs/toooools/signup.php:9
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   3. debugLog() /Applications/MAMP/htdocs/toooools/function.php:40
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP Notice:  Undefined variable: debugLogWrite in /Applications/MAMP/htdocs/toooools/function.php on line 34
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   2. debugLogTitle() /Applications/MAMP/htdocs/toooools/signup.php:9
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   3. debugLog() /Applications/MAMP/htdocs/toooools/function.php:41
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP Notice:  Undefined variable: debugLogWrite in /Applications/MAMP/htdocs/toooools/function.php on line 34
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   2. debugLogStart() /Applications/MAMP/htdocs/toooools/signup.php:10
+[11-Feb-2019 17:12:11 Asia/Tokyo] PHP   3. debugLog() /Applications/MAMP/htdocs/toooools/function.php:46
+[11-Feb-2019 17:13:00 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:13:00 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:13:00 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:13:00 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:27:04 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:27:04 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:27:04 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:27:04 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:27:10 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:27:10 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:27:10 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:27:10 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:27:17 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:27:17 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:27:17 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:27:17 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:27:23 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:27:23 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:27:23 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:27:23 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:29:38 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:29:38 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:29:38 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:29:38 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:30:11 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:30:11 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:30:11 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:30:11 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:34:24 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:34:24 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:34:24 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:34:24 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:34:24 Asia/Tokyo] PHP Notice:  Undefined variable: emial in /Applications/MAMP/htdocs/toooools/signup.php on line 19
+[11-Feb-2019 17:34:24 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:34:24 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:34:38 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:34:38 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:34:38 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:34:38 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:57:18 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:57:18 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:57:18 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:57:18 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:57:18 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[11-Feb-2019 17:57:24 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:57:24 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:57:24 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:57:24 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:57:24 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Undefined class constant 'MYSQL_ATTR_USE_BUFFERD_QUERY' in /Applications/MAMP/htdocs/toooools/function.php:150
+Stack trace:
+#0 /Applications/MAMP/htdocs/toooools/function.php(87): dbConnect()
+#1 /Applications/MAMP/htdocs/toooools/signup.php(32): validEmailDup('\xE3\x81\x82\xE3\x81\xB5\xE3\x81\x81\xE3\x81\xB5\xE3\x81\x81', 'email')
+#2 {main}
+  thrown in /Applications/MAMP/htdocs/toooools/function.php on line 150
+[11-Feb-2019 17:57:56 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:57:56 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:57:56 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:57:56 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:57:56 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP Notice:  Undefined index: pass in /Applications/MAMP/htdocs/toooools/function.php on line 79
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP   2. validMinLen() /Applications/MAMP/htdocs/toooools/signup.php:40
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP Notice:  Undefined variable: regx in /Applications/MAMP/htdocs/toooools/function.php on line 121
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP   2. validHalf() /Applications/MAMP/htdocs/toooools/signup.php:44
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP Warning:  preg_match(): Empty regular expression in /Applications/MAMP/htdocs/toooools/function.php on line 121
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP   2. validHalf() /Applications/MAMP/htdocs/toooools/signup.php:44
+[11-Feb-2019 17:57:56 Asia/Tokyo] PHP   3. preg_match() /Applications/MAMP/htdocs/toooools/function.php:121
+[11-Feb-2019 17:57:56 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[11-Feb-2019 17:57:56 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[11-Feb-2019 17:59:37 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:59:37 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:59:37 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:59:37 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:59:37 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[11-Feb-2019 17:59:37 Asia/Tokyo] PHP Notice:  Undefined variable: regx in /Applications/MAMP/htdocs/toooools/function.php on line 123
+[11-Feb-2019 17:59:37 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:59:37 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:59:37 Asia/Tokyo] PHP   2. validHalf() /Applications/MAMP/htdocs/toooools/signup.php:44
+[11-Feb-2019 17:59:37 Asia/Tokyo] PHP Warning:  preg_match(): Empty regular expression in /Applications/MAMP/htdocs/toooools/function.php on line 123
+[11-Feb-2019 17:59:37 Asia/Tokyo] PHP Stack trace:
+[11-Feb-2019 17:59:37 Asia/Tokyo] PHP   1. {main}() /Applications/MAMP/htdocs/toooools/signup.php:0
+[11-Feb-2019 17:59:37 Asia/Tokyo] PHP   2. validHalf() /Applications/MAMP/htdocs/toooools/signup.php:44
+[11-Feb-2019 17:59:37 Asia/Tokyo] PHP   3. preg_match() /Applications/MAMP/htdocs/toooools/function.php:123
+[11-Feb-2019 17:59:37 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[11-Feb-2019 17:59:52 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:59:52 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:59:52 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:59:52 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:59:52 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[11-Feb-2019 17:59:52 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[11-Feb-2019 17:59:59 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:59:59 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 17:59:59 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 17:59:59 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 17:59:59 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[11-Feb-2019 17:59:59 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[11-Feb-2019 18:04:53 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 18:04:53 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 18:04:53 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 18:04:53 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 18:04:53 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[11-Feb-2019 18:04:53 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[11-Feb-2019 18:04:55 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 18:04:55 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 18:04:55 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 18:04:55 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 18:04:55 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[11-Feb-2019 18:04:55 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[11-Feb-2019 18:05:31 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 18:05:31 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 18:05:31 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 18:05:31 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 18:05:31 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[11-Feb-2019 18:05:31 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[11-Feb-2019 18:05:39 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 18:05:39 Asia/Tokyo] デバッグ：「 ユーザ登録ページ
+[11-Feb-2019 18:05:39 Asia/Tokyo] デバッグ：「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+[11-Feb-2019 18:05:39 Asia/Tokyo] デバッグ：画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[11-Feb-2019 18:05:39 Asia/Tokyo] エラー発生：SQLSTATE[HY000] [2019] Unknown character set
+[11-Feb-2019 18:05:39 Asia/Tokyo] デバッグ：画面表示終了 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
