@@ -14,11 +14,17 @@ if (!empty($_SESSION['login_date'])) {
   if ($maxLoginTime < time()) {
     debugLog('ログイン有効期限切れです');
     session_destroy();
-    header("Location:login.php");
+    if (basename($_SERVER['PHP_SELF']) !== 'login.php') {
+      header("Location:login.php");
+    }
   } else {
-    header("Location:profile.php");
+    if (basename($_SERVER['PHP_SELF']) !== 'profile.php') {
+      header("Location:profile.php");
+    }
   }
 } else {
   debugLog('未ログインユーザーです');
-  header("Location:login.php");
+  if (basename($_SERVER['PHP_SELF']) !== 'login.php') {
+    header("Location:login.php");
+  }
 }

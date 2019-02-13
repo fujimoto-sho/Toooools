@@ -7,8 +7,10 @@
 require_once('function.php');
 
 // 開始ログ
-debugLogTitle('ユーザ登録ページ');
-debugLogStart();
+debugLogStart('ユーザ登録ページ');
+
+// ログイン認証
+require_once('auth.php');
 
 if (!empty($_POST)) {
   debugLog('POST：' . print_r($_POST, true));
@@ -55,8 +57,17 @@ if (!empty($_POST)) {
 
         if ($isPassMatch) {
           debugLog('パスワードOK');
+
+          // ログイン日時
+          $_SESSION['login_date'] = time();
+          // ログイン有効期限
+          $loginLimit = (empty($_POST['limit'])) ? LOGIN_TIME_DEFAULT : LOGIN_TIME_LONG;
+          $_SESSION['login_limit'] = $loginLimit;
+          // ユーザーID
+          $_SESSION['user_id'] = $result['id'];
+
           debugLog('プロフィールへ遷移します。');
-          header("Location:profile.html");
+          header("Location:profile.php");
         } else {
           debugLog('該当データなし');
           $err_msg['pass'] = MSG09;
@@ -66,7 +77,6 @@ if (!empty($_POST)) {
         error_log('エラー発生：' . $e->getMessage());
         $err_msg['common'] = MSG02;
       }
-      
 
     }
   }
@@ -110,8 +120,8 @@ require_once('header.php');
       </label>
 
       <label class="form-label-checkbox">
-        <input type="checkbox" name="save">
-        <span>ログイン情報を保存する</span>
+        <input type="checkbox" name="limit">
+        <span>ログイン情報を保持する</span>
       </label>
 
       <input type="submit" class="form-btn" value="ログイン">
