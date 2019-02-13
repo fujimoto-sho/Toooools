@@ -12,8 +12,8 @@
     <h1 class="logo">Toooools</h1>
     <nav class="top-nav">
       <ul>
-        <li><a class="top-nav-link top-nav-login" href="#">ログイン</a></li>
-        <li><a class="top-nav-link top-nav-signup" href="#">ユーザー登録</a></li>
+        <li><a class="top-nav-link top-nav-login" href="login.php">ログイン</a></li>
+        <li><a class="top-nav-link top-nav-signup" href="signup.php">ユーザー登録</a></li>
       </ul>
     </nav>
   </header>
