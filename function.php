@@ -16,6 +16,14 @@ ini_set('error_log', 'log/php_' . date('Ymd') . '.log');
 $err_msg = array();
 
 //-------------------------------------
+// 定数
+//-------------------------------------
+// ログイン有効期限のデフォルト（1時間）
+define('LOGIN_TIME_DEFAULT', 60*60);
+// ログイン有効期限の最大（30日）
+define('LOGIN_TIME_LONG', 60*60*24*30);
+
+//-------------------------------------
 // メッセージ
 //-------------------------------------
 define('MSG01', '必須入力です。');
@@ -26,6 +34,19 @@ define('MSG05', '半角英数字のみ入力可能です。');
 define('MSG06', '文字以上で入力してください。');
 define('MSG07', '文字以下で入力してください。');
 define('MSG08', 'Emailの形式が違います。');
+define('MSG09', 'メールアドレス、またはパスワードが違います。');
+
+//-------------------------------------
+// セッション
+//-------------------------------------
+// セッションファイルを保存する。/var/tmp/ 以下に保存すると30日保持される。
+session_save_path('/var/tmp/');
+// ガーベージコレクションで回収される有効期限を伸ばす（デフォルト24分）
+ini_set('session.gc_maxlifetime', LOGIN_TIME_DEFAULT);
+// セッション開始
+session_start();
+// セッションを再生成（なりすまし対策）
+session_regenerate_id();
 
 //-------------------------------------
 // デバッグログ
@@ -48,6 +69,12 @@ function debugLogTitle($title)
 function debugLogStart()
 {
   debugLog('画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+  debugLog('セッションID：' . session_id());
+  debugLog('セッション：' . print_r($_SESSION, true));
+  debugLog('現在日時のタイムスタンプ：' . time());
+  if (!empty($_SESSION['login_date']) && !empty($_SESSION['login_limit'])) {
+    debugLog('ログイン有効期限タイムスタンプ：' . $_SESSION['login_date'] + $_SESSION['login_limit']);
+  }
 }
 // デバッグログ（画面表示終了）
 function debugLogEnd()
@@ -162,13 +189,13 @@ function queryPost($dbh, $sql, $data)
   // SQLインジェクションを防ぐため、prepareを使用する
   $stmt = $dbh->prepare($sql);
   $result = $stmt->execute($data);
-  if (!$result) {
+  if ($result) {
+    debugLog('クエリ成功');
+  } else {
     debugLog('クエリ失敗');
     debugLog('失敗したクエリ：' . print_r($stmt, true));
     $err_msg['common'] = MSG02;
-    return 0;
   }
-  debugLog('クエリ成功');
   return $stmt;
 }
 

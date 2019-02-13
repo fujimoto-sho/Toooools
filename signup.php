@@ -88,57 +88,57 @@ $pageTitle = 'ユーザ登録';
 require_once('header.php');
 ?>
 
-  <!-- メイン -->
-  <main class="main site-width one-column">
-    <!-- フォーム -->
-    <div class="form-container">
-      <form class="form" method="post">
-        <h1 class="form-title">ユーザ登録</h1>
+<!-- メイン -->
+<main class="main site-width one-column">
+  <!-- フォーム -->
+  <div class="form-container">
+    <form class="form" method="post">
+      <h1 class="form-title">ユーザ登録</h1>
 
-        <!-- 共通メッセージ -->
-        <div class="input-msg">
-          <?php echo getErrMsg('common'); ?>
-        </div>
+      <!-- 共通メッセージ -->
+      <div class="input-msg">
+        <?php echo getErrMsg('common'); ?>
+      </div>
 
-        <!-- Email -->
-        <div class="input-msg">
-          <?php echo getErrMsg('email'); ?>
-        </div>
-        <label class="form-label <?php if (empty(getErrMsg('email'))) echo 'err'; ?>">
-          Email
-          <input type="text" name="email" value="<?php echo getPost('email'); ?>">
-        </label>
+      <!-- Email -->
+      <div class="input-msg">
+        <?php echo getErrMsg('email'); ?>
+      </div>
+      <label class="form-label <?php if (empty(getErrMsg('email'))) echo 'err'; ?>">
+        Email
+        <input type="text" name="email" value="<?php echo getPost('email'); ?>">
+      </label>
 
-        <!-- ユーザー名 -->
-        <div class="input-msg">
-          <?php echo getErrMsg('name'); ?>
-        </div>
-        <label class="form-label <?php if (empty(getErrMsg('name'))) echo 'err'; ?>">
-          ユーザー名
-          <input type="text" name="name" value="<?php echo getPost('name'); ?>">
-        </label>
+      <!-- ユーザー名 -->
+      <div class="input-msg">
+        <?php echo getErrMsg('name'); ?>
+      </div>
+      <label class="form-label <?php if (empty(getErrMsg('name'))) echo 'err'; ?>">
+        ユーザー名
+        <input type="text" name="name" value="<?php echo getPost('name'); ?>">
+      </label>
 
-        <!-- パスワード -->
-        <div class="input-msg">
-          <?php echo getErrMsg('pass'); ?>
-        </div>
-        <label class="form-label <?php if (empty(getErrMsg('pass'))) echo 'err'; ?>">
-          パスワード
-          <input type="password" name="pass" placeholder="英数字6文字以上" value="<?php echo getPost('pass'); ?>">
-        </label>
+      <!-- パスワード -->
+      <div class="input-msg">
+        <?php echo getErrMsg('pass'); ?>
+      </div>
+      <label class="form-label <?php if (empty(getErrMsg('pass'))) echo 'err'; ?>">
+        パスワード
+        <input type="password" name="pass" placeholder="英数字6文字以上" value="<?php echo getPost('pass'); ?>">
+      </label>
 
-        <!-- パスワード（再入力）-->
-        <div class="input-msg">
-          <?php echo getErrMsg('pass_re'); ?>
-        </div>
-        <label class="form-label <?php if (empty(getErrMsg('pass_re'))) echo 'err'; ?>">
-          パスワード（再入力）
-          <input type="password" name="pass_re" placeholder="英数字6文字以上" value="<?php echo getPost('pass_re'); ?>">
-        </label>
+      <!-- パスワード（再入力）-->
+      <div class="input-msg">
+        <?php echo getErrMsg('pass_re'); ?>
+      </div>
+      <label class="form-label <?php if (empty(getErrMsg('pass_re'))) echo 'err'; ?>">
+        パスワード（再入力）
+        <input type="password" name="pass_re" placeholder="英数字6文字以上" value="<?php echo getPost('pass_re'); ?>">
+      </label>
 
-        <input type="submit" class="form-btn" value="登録">
-      </form>
-    </div>
-  </main>
+      <input type="submit" class="form-btn" value="登録">
+    </form>
+  </div>
+</main>
 
 <?php require_once('footer.php'); ?>
