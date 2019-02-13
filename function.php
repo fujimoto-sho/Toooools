@@ -58,22 +58,18 @@ function debugLog($msg)
   global $debugLogWrite;
   if ($debugLogWrite) error_log('デバッグ：' . $msg);
 }
-// デバッグログ（ページタイトル）
-function debugLogTitle($title)
+// デバッグログ（画面表示開始）
+function debugLogStart($title)
 {
   debugLog('「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「');
   debugLog('「 ' . $title);
   debugLog('「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「「');
-}
-// デバッグログ（画面表示開始）
-function debugLogStart()
-{
   debugLog('画面表示開始 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
   debugLog('セッションID：' . session_id());
   debugLog('セッション：' . print_r($_SESSION, true));
   debugLog('現在日時のタイムスタンプ：' . time());
   if (!empty($_SESSION['login_date']) && !empty($_SESSION['login_limit'])) {
-    debugLog('ログイン有効期限タイムスタンプ：' . $_SESSION['login_date'] + $_SESSION['login_limit']);
+    debugLog('ログイン有効期限タイムスタンプ：' . ($_SESSION['login_date'] + $_SESSION['login_limit']));
   }
 }
 // デバッグログ（画面表示終了）

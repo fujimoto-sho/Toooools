@@ -7,8 +7,7 @@
 require_once('function.php');
 
 // 開始ログ
-debugLogTitle('ユーザ登録ページ');
-debugLogStart();
+debugLogStart('ユーザ登録ページ');
 
 if (!empty($_POST)) {
   debugLog('POST：' . print_r($_POST, true));
@@ -66,7 +65,16 @@ if (!empty($_POST)) {
   
           if ($stmt) {
             debugLog('ユーザー登録成功');
-            header("Location:profile.html");
+            debugLog('プロフィールに遷移します。');
+
+            // ログイン日時
+            $_SESSION['login_date'] = time();
+            // ログイン有効期限
+            $_SESSION['login_limit'] = LOGIN_TIME_DEFAULT;
+            // ユーザーID
+            $_SESSION['user_id'] = $dbh->lastInsertId();
+
+            header("Location:profile.php");
           } else {
             debugLog('ユーザー登録失敗');
             $err_msg['common'] = MSG02;
