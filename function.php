@@ -111,7 +111,7 @@ function validEmailDup($email, $key)
   try {
     // DB処理
     $dbh = dbConnect();
-    $sql = 'SELECT * FROM users WHERE email = :email';
+    $sql = 'SELECT * FROM users WHERE email = :email AND delete_flg = 0';
     $data = array(
       ':email' => $email
     );
@@ -184,13 +184,14 @@ function queryPost($dbh, $sql, $data)
 {
   // SQLインジェクションを防ぐため、prepareを使用する
   $stmt = $dbh->prepare($sql);
-  $result = $stmt->execute($data);
-  if ($result) {
+  $stmt->execute($data);
+  if ($stmt) {
     debugLog('クエリ成功');
   } else {
     debugLog('クエリ失敗');
     debugLog('失敗したクエリ：' . print_r($stmt, true));
     $err_msg['common'] = MSG02;
+    return 0;
   }
   return $stmt;
 }
