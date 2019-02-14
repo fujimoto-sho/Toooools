@@ -43,7 +43,7 @@ if (!empty($_POST)) {
       try {
         // DB処理
         $dbh = dbConnect();
-        $sql = 'SELECT id, password FROM users WHERE email = :email';
+        $sql = 'SELECT id, password FROM users WHERE email = :email AND delete_flg = 0';
         $data = array(
           ':email' => $email,
         );
@@ -87,7 +87,6 @@ debugLogEnd();
 $pageTitle = 'ログイン';
 require_once('header.php');
 ?>
-
 
 <!-- メイン -->
 <main class="main site-width one-column">

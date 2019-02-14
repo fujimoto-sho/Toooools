@@ -51,7 +51,7 @@ require_once('header.php');
       <div class="sidebar">
         <button class="prof-side-btn">プロフィール編集</button>
         <button class="prof-side-btn">パスワード変更</button>
-        <button class="prof-side-btn">退会</button>
+        <button class="prof-side-btn"><a href="withdraw.php">退会</a></button>
 
       </div>
 
