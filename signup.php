@@ -114,7 +114,7 @@ require_once('header.php');
       </div>
       <label class="form-label <?php if (empty(getErrMsg('email'))) echo 'err'; ?>">
         Email
-        <input type="text" name="email" value="<?php echo getPost('email'); ?>">
+        <input type="text" name="email" value="<?php echo getFormData('email'); ?>">
       </label>
 
       <!-- ユーザー名 -->
@@ -123,7 +123,7 @@ require_once('header.php');
       </div>
       <label class="form-label <?php if (empty(getErrMsg('name'))) echo 'err'; ?>">
         ユーザー名
-        <input type="text" name="name" value="<?php echo getPost('name'); ?>">
+        <input type="text" name="name" value="<?php echo getFormData('name'); ?>">
       </label>
 
       <!-- パスワード -->
@@ -132,7 +132,7 @@ require_once('header.php');
       </div>
       <label class="form-label <?php if (empty(getErrMsg('pass'))) echo 'err'; ?>">
         パスワード
-        <input type="password" name="pass" placeholder="英数字6文字以上" value="<?php echo getPost('pass'); ?>">
+        <input type="password" name="pass" placeholder="英数字6文字以上" value="<?php echo getFormData('pass'); ?>">
       </label>
 
       <!-- パスワード（再入力）-->
@@ -141,7 +141,7 @@ require_once('header.php');
       </div>
       <label class="form-label <?php if (empty(getErrMsg('pass_re'))) echo 'err'; ?>">
         パスワード（再入力）
-        <input type="password" name="pass_re" placeholder="英数字6文字以上" value="<?php echo getPost('pass_re'); ?>">
+        <input type="password" name="pass_re" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_re'); ?>">
       </label>
 
       <input type="submit" class="form-btn" value="登録">

@@ -197,6 +197,37 @@ function queryPost($dbh, $sql, $data)
 }
 
 //-------------------------------------
+// データベース取得処理
+//-------------------------------------/
+// usersテーブル取得
+function getUser()
+{
+  global $err_msg;
+  debugLog('ユーザーデータ取得');
+
+  try {
+    // DB処理
+    $dbh = dbConnect();
+    $sql = 'SELECT * FROM users WHERE id = :uid';
+    $data = array(
+      ":uid" => $_SESSION['user_id'],
+    );
+    $stmt = queryPost($dbh, $sql, $data);
+
+    if (!$stmt) {
+      debugLog('ユーザーデータ取得失敗');
+      return 0;
+    }
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+    $err_msg['common'] = MSG02;
+  }
+}
+
+//-------------------------------------
 // その他
 //-------------------------------------
 // エラーメッセージが存在したら返す
@@ -209,10 +240,21 @@ function getErrMsg($key)
   return $err_msg[$key];
 }
 // POSTされていたらその文字列を返す
-function getPost($key)
+function getFormData($key)
 {
-  // 存在しなかったら空白を返す
-  if (empty($_POST[$key])) return '';
+  global $dbFormData;
 
-  return $_POST[$key];
+  // POSTされていたら返す
+  if (!empty($_POST[$key])) return $_POST[$key];
+
+  // SELECT結果があったら返す
+  if (!empty($dbFormData[$key])) return $dbFormData[$key];
+
+  // 両方存在しなかったら空白を返す
+  return '';
+}
+// 画像アップロード
+function uploadImage() 
+{
+
 }

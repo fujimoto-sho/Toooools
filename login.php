@@ -106,7 +106,7 @@ require_once('header.php');
       </div>
       <label class="form-label <?php if (empty(getErrMsg('email'))) echo 'err'; ?>">
         Email
-        <input type="text" name="email" value="<?php echo getPost('email'); ?>">
+        <input type="text" name="email" value="<?php echo getFormData('email'); ?>">
       </label>
 
       <!-- パスワード -->
@@ -115,7 +115,7 @@ require_once('header.php');
       </div>
       <label class="form-label <?php if (empty(getErrMsg('pass'))) echo 'err'; ?>">
         パスワード
-        <input type="password" name="pass" id="" placeholder="英数字6文字以上" value="<?php echo getPost('pass'); ?>">
+        <input type="password" name="pass" id="" placeholder="英数字6文字以上" value="<?php echo getFormData('pass'); ?>">
       </label>
 
       <label class="form-label-checkbox">
