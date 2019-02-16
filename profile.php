@@ -49,7 +49,7 @@ require_once('header.php');
 
       <!-- サイドバー -->
       <div class="sidebar">
-        <button class="prof-side-btn">プロフィール編集</button>
+        <button class="prof-side-btn"><a href="profileEdit.php">プロフィール編集</a></button>
         <button class="prof-side-btn">パスワード変更</button>
         <button class="prof-side-btn"><a href="withdraw.php">退会</a></button>
 
