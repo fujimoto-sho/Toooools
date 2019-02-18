@@ -22,3 +22,12 @@
       </ul>
     </nav>
   </header>
+
+  <?php if (!empty($_SESSION['flash_msg']) && empty($_POST)) : ?>
+    <div class="flash-msg" hidden>
+      <?php
+        echo $_SESSION['flash_msg'];
+        unset($_SESSION['flash_msg']);
+      ?>
+    </div>
+  <?php endif; ?>

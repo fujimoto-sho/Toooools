@@ -35,6 +35,11 @@ define('MSG06', '文字以上で入力してください。');
 define('MSG07', '文字以下で入力してください。');
 define('MSG08', 'Emailの形式が違います。');
 define('MSG09', 'メールアドレス、またはパスワードが違います。');
+define('MSG10', '現在のパスワードが違います。');
+define('MSG11', '現在のパスワードと新しいパスワードが同じです。');
+define('MSG12', '新しいパスワード（再入力）が合っていません。');
+define('SUC01', 'プロフィールを変更しました。');
+define('SUC02', 'パスワードを変更しました。');
 
 //-------------------------------------
 // セッション
@@ -156,6 +161,16 @@ function validEqual($str1, $str2, $key)
     $err_msg[$key] = MSG04;
   }
 }
+// パスワードのバリデーション
+function validPass($pass, $key)
+{
+  // 最小文字数チェック
+  validMinLen($pass, $key);
+  // 最大文字数チェック
+  validMaxLen($pass, $key);
+  // 半角英数字チェック
+  validHalf($pass, $key);
+}
 
 //-------------------------------------
 // データベース
@@ -195,10 +210,6 @@ function queryPost($dbh, $sql, $data)
   }
   return $stmt;
 }
-
-//-------------------------------------
-// データベース取得処理
-//-------------------------------------/
 // usersテーブル取得
 function getUser()
 {
@@ -225,6 +236,62 @@ function getUser()
     error_log('エラー発生：' . $e->getMessage());
     $err_msg['common'] = MSG02;
   }
+}
+// パスワード変更
+function changePassword($pass, $userId) 
+{
+  global $err_msg;
+  try {
+    // データベース処理
+    $dbh = dbConnect();
+    $sql = 'UPDATE users SET password = :pass WHERE id = :id';
+    $data = array(
+      ':pass' => $pass,
+      ':id' => $userId,
+    );
+    $stmt = queryPost($dbh, $sql, $data);
+
+    if ($stmt) {
+      debugLog('パスワード変更失敗');
+      return false;
+    }
+
+    debugLog('パスワード変更成功');
+    return true;
+
+  } catch (Exception $e) {
+    error_log('エラー発生：' .$e->getMessage());
+    $err_msg['common'] = MSG02;
+  }
+
+}
+
+//-------------------------------------
+// メール送信
+//-------------------------------------
+// メール送信
+function sendMail($from, $to, $subject, $comment)
+{
+  debugLog('メール送信処理開始');
+
+  // 空が存在したら処理しない
+  if (empty($from)) return;
+  if (empty($to)) return;
+  if (empty($subject)) return;
+  if (empty($comment)) return;
+
+  // 文字化け回避
+  mb_language('Japanese');
+  mb_internal_encoding('UTF-8');
+
+  // メール送信
+  $isSend = mb_send_mail($to, $subject, $comment, 'From: ' . $from);
+  if ($isSend) {
+    debugLog('メール送信成功');
+  } else {
+    debugLog('メール送信失敗');
+  }
+
 }
 
 //-------------------------------------

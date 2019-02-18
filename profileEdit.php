@@ -75,6 +75,9 @@ if (!empty($_POST)) {
 
         if ($stmt) {
           debugLog('ユーザー情報更新成功');
+
+          // フラッシュメッセージセット
+          $_SESSION['flash_msg'] = SUC01;
           debugLog('プロフィールに遷移します。');
 
           header("Location:profile.php");
@@ -113,7 +116,7 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('email'); ?>
       </div>
-      <label class="form-label <?php if (empty(getErrMsg('email'))) echo 'err'; ?>">
+      <label class="form-label <?php if (!empty(getErrMsg('email'))) echo 'err'; ?>">
         Email
         <input type="text" name="email" value="<?php echo getFormData('email'); ?>">
       </label>
@@ -122,7 +125,7 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('name'); ?>
       </div>
-      <label class="form-label <?php if (empty(getErrMsg('name'))) echo 'err'; ?>">
+      <label class="form-label <?php if (!empty(getErrMsg('name'))) echo 'err'; ?>">
         ユーザー名
         <input type="text" name="name" value="<?php echo getFormData('name'); ?>">
       </label>
@@ -131,7 +134,7 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('like_tool'); ?>
       </div>
-      <label class="form-label <?php if (empty(getErrMsg('like_tool'))) echo 'err'; ?>">
+      <label class="form-label <?php if (!empty(getErrMsg('like_tool'))) echo 'err'; ?>">
         一番お気に入りのツール
         <input type="text" name="like_tool" value="<?php echo getFormData('like_tool'); ?>">
       </label>
@@ -140,7 +143,7 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('bio'); ?>
       </div>
-      <label class="form-label <?php if (empty(getErrMsg('bio'))) echo 'err'; ?>">
+      <label class="form-label <?php if (!empty(getErrMsg('bio'))) echo 'err'; ?>">
         自己紹介
         <textarea name="bio" cols="30" rows="5"><?php echo getFormData('bio'); ?></textarea>
       </label>
