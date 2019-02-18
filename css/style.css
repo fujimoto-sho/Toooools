@@ -48,7 +48,7 @@ input, select,textarea {
   width: 100%;
   height: 80px;
   line-height: 80px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .logo {
   font-size: 3rem;
@@ -71,6 +71,13 @@ input, select,textarea {
   display: block;
   text-align: center;
 }
+.flash-msg {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(160, 219, 92, 0.2);
+  text-align: center;
+  line-height: 40px;
+}
 
 /*===============================
  * footer
@@ -90,6 +97,7 @@ input, select,textarea {
  * main
  *=============================*/
 .main {
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 /*===============================
@@ -322,6 +330,13 @@ input, select,textarea {
 }
 .form-label-file input[type="file"] {
   display: none;
+}
+.form-label.err {
+  margin-top: 5px;
+}
+.form-label.err input,
+.form-label.err textarea {
+  background-color: rgba(255, 75, 89, 0.5);
 }
 /*===============================
  * profile

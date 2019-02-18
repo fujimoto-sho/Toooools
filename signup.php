@@ -112,7 +112,7 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('email'); ?>
       </div>
-      <label class="form-label <?php if (empty(getErrMsg('email'))) echo 'err'; ?>">
+      <label class="form-label <?php if (!empty(getErrMsg('email'))) echo 'err'; ?>">
         Email
         <input type="text" name="email" value="<?php echo getFormData('email'); ?>">
       </label>
@@ -121,7 +121,7 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('name'); ?>
       </div>
-      <label class="form-label <?php if (empty(getErrMsg('name'))) echo 'err'; ?>">
+      <label class="form-label <?php if (!empty(getErrMsg('name'))) echo 'err'; ?>">
         ユーザー名
         <input type="text" name="name" value="<?php echo getFormData('name'); ?>">
       </label>
@@ -130,7 +130,7 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('pass'); ?>
       </div>
-      <label class="form-label <?php if (empty(getErrMsg('pass'))) echo 'err'; ?>">
+      <label class="form-label <?php if (!empty(getErrMsg('pass'))) echo 'err'; ?>">
         パスワード
         <input type="password" name="pass" placeholder="英数字6文字以上" value="<?php echo getFormData('pass'); ?>">
       </label>
@@ -139,7 +139,7 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('pass_re'); ?>
       </div>
-      <label class="form-label <?php if (empty(getErrMsg('pass_re'))) echo 'err'; ?>">
+      <label class="form-label <?php if (!empty(getErrMsg('pass_re'))) echo 'err'; ?>">
         パスワード（再入力）
         <input type="password" name="pass_re" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_re'); ?>">
       </label>
