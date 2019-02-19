@@ -23,6 +23,7 @@
     </nav>
   </header>
 
+  <!-- フラッシュメッセージの表示 -->
   <?php if (!empty($_SESSION['flash_msg']) && empty($_POST)) : ?>
     <div class="flash-msg" hidden>
       <?php

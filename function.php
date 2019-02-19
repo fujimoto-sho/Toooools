@@ -38,8 +38,10 @@ define('MSG09', 'メールアドレス、またはパスワードが違います
 define('MSG10', '現在のパスワードが違います。');
 define('MSG11', '現在のパスワードと新しいパスワードが同じです。');
 define('MSG12', '新しいパスワード（再入力）が合っていません。');
+define('MSG13', '登録されていないメールアドレスです。');
 define('SUC01', 'プロフィールを変更しました。');
 define('SUC02', 'パスワードを変更しました。');
+define('SUC03', 'パスワードの再設定が完了しました。');
 
 //-------------------------------------
 // セッション
@@ -324,4 +326,15 @@ function getFormData($key)
 function uploadImage() 
 {
 
+}
+// ランダムな文字列を生成する
+function makeRandStr($length = 10)
+{
+  static $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJLKMNOPQRSTUVWXYZ0123456789';
+  $str = '';
+  for ($i = 0; $i < $length; $i++) {
+    $str .= $chars[mt_rand(0, 61)];
+  }
+
+  return $str;
 }

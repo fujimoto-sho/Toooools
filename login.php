@@ -126,7 +126,7 @@ require_once('header.php');
       <input type="submit" class="form-btn" value="ログイン">
 
       <div class="form-link-list">
-        <a href="signup.php">新規登録</a> | <a href="">パスワードを忘れてしまった方はこちら</a> 
+        <a href="signup.php">新規登録</a> | <a href="passRemindSend.php">パスワードを忘れてしまった方はこちら</a> 
       </div>
     </form>
   </div>
