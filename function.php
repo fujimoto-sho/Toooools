@@ -42,6 +42,8 @@ define('MSG13', '登録されていないメールアドレスです。');
 define('SUC01', 'プロフィールを変更しました。');
 define('SUC02', 'パスワードを変更しました。');
 define('SUC03', 'パスワードの再設定が完了しました。');
+define('SUC04', '投稿が完了しました。');
+define('SUC05', '投稿を編集しました。');
 
 //-------------------------------------
 // セッション
@@ -221,8 +223,36 @@ function getUser()
   try {
     // DB処理
     $dbh = dbConnect();
-    $sql = 'SELECT * FROM users WHERE id = :uid';
+    $sql = 'SELECT * FROM users WHERE id = :uid AND delete_flg = 0';
     $data = array(
+      ":uid" => $_SESSION['user_id'],
+    );
+    $stmt = queryPost($dbh, $sql, $data);
+
+    if (!$stmt) {
+      debugLog('ユーザーデータ取得失敗');
+      return 0;
+    }
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+    $err_msg['common'] = MSG02;
+  }
+}
+// toolsテーブル取得
+function getTool($id)
+{
+  global $err_msg;
+  debugLog('ツールデータ取得');
+
+  try {
+    // DB処理
+    $dbh = dbConnect();
+    $sql = 'SELECT * FROM tools WHERE id = :id AND user_id = :uid AND delete_flg = 0';
+    $data = array(
+      ":id" => $id,
       ":uid" => $_SESSION['user_id'],
     );
     $stmt = queryPost($dbh, $sql, $data);
@@ -314,7 +344,7 @@ function getFormData($key)
   global $dbFormData;
 
   // POSTされていたら返す
-  if (!empty($_POST[$key])) return $_POST[$key];
+  if (isset($_POST[$key])) return $_POST[$key];
 
   // SELECT結果があったら返す
   if (!empty($dbFormData[$key])) return $dbFormData[$key];
@@ -322,9 +352,62 @@ function getFormData($key)
   // 両方存在しなかったら空白を返す
   return '';
 }
-// 画像アップロード
-function uploadImage() 
+// 画像をバイナリデータに変換
+function imageToBlob($file, $key)
 {
+  try {
+    // エラーチェック
+    switch ($file['error']) {
+      case UPLOAD_ERR_OK: // エラーなし
+        break;
+      case UPLOAD_ERR_NO_FILE: // 未選択
+        return '';
+        break;
+        // throw new RuntimeException('ファイルが選択されていません');
+      case UPLOAD_ERR_INI_SIZE: // iniで指定したサイズオーバー
+      case UPLOAD_ERR_FORM_SIZE: // フォームで指定したサイズオーバー
+        throw new RuntimeException('ファイルサイズが大きすぎます');
+      default:
+        throw new RuntimeException('その他エラー');
+    }
+
+    // MIMEタイプチェック
+    $mimeList = array(
+      'image/jpeg',
+      'image/gif',
+      'image/png'
+    );
+    // $fileMime = mime_content_type($file['name']);
+    $fileMime = $file['type'];
+    if (!in_array($fileMime, $mimeList)) {
+      throw new RuntimeException('画像を選択してください');
+    }
+
+    // バイナリデータに変換する
+    $raw_data = file_get_contents($file['tmp_name']);
+
+    return $raw_data;
+
+  } catch (RuntimeException $e) {
+    debugLog($e->getMessage());
+    global $err_msg;
+    $err_msg[$key] = $e->getMessage();
+    return '';
+  }
+}
+// imgタグのsrcに指定
+function getImage($isCreate, $t_id, $key)
+{
+  global $tool_img;
+  global $tool_img_mime;
+  if (!empty($tool_img)) {
+    $content = base64_encode($tool_img);
+    return 'data:' . $tool_img_mime . ';base64,' . $content;
+  }
+
+  // if (!$isCreate && empty($_FILES[$key])) return 'imageImport.php?t_id=' . $t_id;
+
+  return '';
 
 }
 // ランダムな文字列を生成する
