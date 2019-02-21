@@ -9,13 +9,14 @@
 <body>
   <!-- ヘッダー -->
   <header class="header">
-    <h1 class="logo">Toooools</h1>
+    <h1 class="logo"><a href="profile.php">Toooools</a></h1>
     <nav class="top-nav">
       <ul>
         <?php if (empty($_SESSION['login_date'])) { ?>
           <li><a class="top-nav-link top-nav-login" href="login.php">ログイン</a></li>
           <li><a class="top-nav-link top-nav-signup" href="signup.php">ユーザー登録</a></li>
         <?php } else { ?>
+          <li><a class="top-nav-link top-nav-login" href="postCreate.php">新規投稿</a></li>
           <li><a class="top-nav-link top-nav-login" href="profile.php">プロフィール</a></li>
           <li><a class="top-nav-link top-nav-signup" href="logout.php">ログアウト</a></li>
         <?php } ?>

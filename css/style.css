@@ -52,9 +52,11 @@ input, select,textarea {
 }
 .logo {
   font-size: 3rem;
-  color: #fff;
   margin-left: 20px;
   float: left;
+}
+.logo a {
+  color: #fff;
 }
 .top-nav {
   float: right;
@@ -316,20 +318,39 @@ input, select,textarea {
   font-size: 1.4rem;
   text-align: center;
 }
-.form-input-file {
+.form-input-container {
+  position: relative;
+  overflow: hidden;
   width: 150px;
   height: 150px;
 }
 .form-label-file {
-  width: 150px;
-  height: 150px;
+  margin: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
   background-color: #f6f5f5;
   text-align: center;
   line-height: 150px;
   font-size: 1.2rem;
 }
-.form-label-file input[type="file"] {
-  display: none;
+.form-input-container input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+}
+.form-input-file-img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
 }
 .form-label.err {
   margin-top: 5px;
