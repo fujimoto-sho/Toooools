@@ -1,143 +1,104 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>TOP | Toooools</title>
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="tool/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <!-- ヘッダー -->
-  <header class="header">
-    <h1 class="logo">Toooools</h1>
-    <nav class="top-nav">
-      <ul>
-        <li><a class="top-nav-link top-nav-login" href="#">ログイン</a></li>
-        <li><a class="top-nav-link top-nav-signup" href="#">ユーザー登録</a></li>
-      </ul>
-    </nav>
-  </header>
+<?php
+//*************************************
+// 投稿一覧
+//*************************************
 
-  <!-- メイン -->
-  <main class="main site-width two-column">
-    <!-- サイドバー -->
-    <div class="sidebar">
-      <form method="post" class="search-form">
-        <label>
-          並び順
-          <select name="" id="">
-            <option value="">新着順</option>
-            <option value=""></option>
-            <option value=""></option>
-          </select>
-        </label>
-        <label>
-          検索対象
-          <select name="" id="">
-            <option value="">ツール名</option>
-            <option value="">ツール紹介文</option>
-            <option value="">ユーザ名</option>
-          </select>
-        </label>
-        <label>
-          フリーワード
-          <input type="text">
-        </label>
-        <input type="submit" value="検索">
-      </form>
+// 共通変数・関数読み込み
+require_once('function.php');
 
-    </div>
+// 開始ログ
+debugLogStart('投稿一覧ページ');
 
-    <!-- 投稿 -->
-    <div class="post">
-      <div class="post-list">
-        <img src="img/user-icon-1.jpg" alt="" class="post-user-img">
-        <p class="post-user-name">ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユ名ユーザーザ</p>
-        <time class="post-time" datetime="2018-02-03 11:22:55">2018年02月03日 11時22分55秒</time>
-        <h1 class="post-tool-name">ツール名ツール名ツール名ツール名ツール名ツ名ツール名名ツール名ール名</h1>
-        <div class="post-wrap-center">
-          <p class="post-tool-introduction">
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-          </p>
-          <img src="img/javascript.jpg" alt="" class="post-tool-img">
-        </div>
-        <div class="post-wrap-icon">
-          <i class="fas fa-reply"></i>
-          <span class="post-reply-count">9</span>
-          <i class="fas fa-heart"></i>
-          <span class="post-like-count">9</span>
-          <i class="fas fa-angle-down fa-lg"></i>
-        </div>
-      </div>
-      
-      <div class="post-list">
-        <img src="img/user-icon-1.jpg" alt="" class="post-user-img">
-        <p class="post-user-name">ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユ名ユーザーザ</p>
-        <time class="post-time" datetime="2018-02-03 11:22:55">2018年02月03日 11時22分55秒</time>
-        <h1 class="post-tool-name">ツール名ツール名ツール名ツール名ツール名ツ名ツール名名ツール名ール名</h1>
-        <div class="post-wrap-center">
-          <p class="post-tool-introduction">
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-          </p>
-          <img src="img/javascript.jpg" alt="" class="post-tool-img">
-        </div>
-        <div class="post-wrap-icon">
-          <i class="fas fa-reply"></i>
-          <span class="post-reply-count">9</span>
-          <i class="fas fa-heart"></i>
-          <span class="post-like-count">9</span>
-          <i class="fas fa-angle-down fa-lg"></i>
-        </div>
-      </div>
-      
-      <div class="post-list">
-        <img src="img/user-icon-1.jpg" alt="" class="post-user-img">
-        <p class="post-user-name">ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユ名ユーザーザ</p>
-        <time class="post-time" datetime="2018-02-03 11:22:55">2018年02月03日 11時22分55秒</time>>
-        <h1 class="post-tool-name">ツール名ツール名ツール名ツール名ツール名ツ名ツール名名ツール名ール名</h1>
-        <div class="post-wrap-center">
-          <p class="post-tool-introduction">
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-          </p>
-          <img src="img/javascript.jpg" alt="" class="post-tool-img">
-        </div>
-        <div class="post-wrap-icon">
-          <i class="fas fa-reply"></i>
-          <span class="post-reply-count">9</span>
-          <i class="fas fa-heart"></i>
-          <span class="post-like-count">9</span>
-          <i class="fas fa-angle-down fa-lg"></i>
-        </div>
-      </div>
+$order = (!empty($_GET['order'])) ? $_GET['order'] : '';
+$search_target = (!empty($_GET['search_target'])) ? $_GET['search_target'] : '';
+$search_word = (!empty($_GET['search_word'])) ? $_GET['search_word'] : '';
 
-      <div class="pagenation">
-        <ul class="pagenation-list">
-          <li class="pagenation-item"><a href="">&lt;</a></li>
-          <li class="pagenation-item pagination-item-now"><a href="">1</a></li>
-          <li class="pagenation-item"><a href="">2</a></li>
-          <li class="pagenation-item"><a href="">3</a></li>
-          <li class="pagenation-item"><a href="">4</a></li>
-          <li class="pagenation-item"><a href="">5</a></li>
-          <li class="pagenation-item"><a href="">&gt;</a></li>
-        </ul>
-      </div>
-    </div>
+$postData = getPost($order, $search_target, $search_word, 0);
+$postCount = (!empty($postData)) ? count($postData) : 0;
 
-  </main>
+$onePageCount = 10;
+$nowPage = (!empty($_GET['p'])) ? (int)$_GET['p'] : 1;
+$pageCount = (int)ceil($postCount / $onePageCount);
 
-  <!-- フッター -->
-  <footer class="footer">
-    Copyright fujisho All Rights Reserved.
-  </footer>
-</body>
-</html>
+$minPostNum = (($nowPage - 1) * $onePageCount) + 1;
+if ($minPostNum > $postCount) $minPostNum = $postCount;
+$maxPostNum = (($nowPage) * $onePageCount);
+if ($maxPostNum > $postCount) $maxPostNum = $postCount;
+
+// 再取得
+$postData = getPost($order, $search_target, $search_word, $nowPage);
+
+// 終了ログ
+debugLogEnd();
+$pageTitle = '投稿一覧';
+require_once('header.php');
+?>
+
+<!-- メイン -->
+<main class="main site-width two-column">
+  <!-- サイドバー -->
+  <div class="sidebar">
+    <form method="get" class="search-form">
+      <label>
+        並び順
+        <select name="order">
+          <option value="create_desc" <?php if($order === 'create_desc') echo 'selected'; ?>>新着順</option>
+          <option value="create_asc" <?php if($order === 'create_asc') echo 'selected'; ?>>古い順</option>
+          <option value="like_desc" <?php if($order === 'like_desc') echo 'selected'; ?>>いいねが多い順</option>
+        </select>
+      </label>
+      <label>
+        検索対象
+        <select name="search_target" id="">
+          <option value="tool_name" <?php if($search_target === 'tool_name') echo 'selected'; ?>>ツール名</option>
+          <option value="tool_introduction" <?php if($search_target === 'tool_introduction') echo 'selected'; ?>>ツール紹介文</option>
+          <option value="user_name" <?php if($search_target === 'user_name') echo 'selected'; ?>>ユーザ名</option>
+        </select>
+      </label>
+      <label>
+        検索ワード
+        <input type="text" name="search_word" value="<?php if(!empty($_GET['search_word'])) echo $_GET['search_word']; ?>">
+      </label>
+      <input type="submit" value="検索">
+    </form>
+    <?php echo $minPostNum; ?> - <?php echo $maxPostNum; ?> 件（全<?php echo $postCount; ?>件）
+  </div>
+
+  <!-- 投稿 -->
+  <div class="post">
+    <?php
+      if ($postCount > 0) {
+        foreach($postData as $row) {
+    ?>
+          <div class="post-list">
+            <img src="<?php echo showImage($row['avatar_img'], $row['avatar_img_mime']); ?>" alt="" class="post-user-img">
+            <p class="post-user-name"><a href="profile.php?u_id=<?php echo $row['user_id']; ?>"><?php echo $row['user_name']; ?></a></p>
+            <time class="post-time" datetime="<?php echo $row['created_at']; ?>"><?php echo $row['created_at']; ?></time>
+            <h1 class="post-tool-name"><a href="postDetail.php?t_id=<?php echo $row['tool_id']; ?>"><?php echo $row['tool_name']; ?></a></h1>
+            <div class="post-wrap-center">
+              <p class="post-tool-introduction">
+                <?php echo $row['tool_introduction']; ?>
+              </p>
+              <img src="<?php echo showImage($row['tool_img'], $row['tool_img_mime']); ?>" alt="" class="post-tool-img">
+            </div>
+            <div class="post-wrap-icon">
+              <i class="fas fa-reply"></i>
+              <span class="post-reply-count"><?php echo $row['reply_cnt']; ?></span>
+              <i class="fas fa-heart"></i>
+              <span class="post-like-count"><?php echo $row['like_cnt']; ?></span>
+              <i class="fas fa-angle-down fa-lg"></i>
+            </div>
+          </div>
+    <?php
+        }
+        pagenation($nowPage, $pageCount);
+      } else {
+        echo '検索結果がありません。';
+      }
+    ?>
+
+  </div>
+
+</main>
+
+<?php require_once('footer.php'); ?>

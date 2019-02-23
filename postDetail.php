@@ -78,7 +78,6 @@ require_once('header.php');
 
 <!-- メイン -->
 <main class="main site-width one-column">
-
   <!-- 投稿 -->
   <div class="post-detail">
     <div class="post-list">
