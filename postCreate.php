@@ -169,7 +169,7 @@ require_once('header.php');
       <div class="form-input-container">
       <label class="form-label form-label-file">
         ツール画像
-          <input type="hidden" name="MAX_FILE_SIZE" value="300000">
+          <input type="hidden" name="MAX_FILE_SIZE" value="1500000">
           <input type="file" name="tool_img" id="js-img-input" hidden>
           <img src="<?php echo getImage($isCreate, $t_id, 'tool_img'); ?>" id="js-img-show" class="form-input-file-img">
         </label>
