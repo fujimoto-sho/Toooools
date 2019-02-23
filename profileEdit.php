@@ -13,6 +13,15 @@ debugLogStart('プロフィール編集ページ');
 require_once('auth.php');
 
 $dbFormData = getUser();
+if (!empty($dbFormData)) {
+  $avatar_img = $dbFormData['avatar_img'];
+  $avatar_img_mime = $dbFormData['avatar_img_mime'];
+}
+
+if (empty($_POST)) {
+  unset($_SESSION['avatar_img']);
+  unset($_SESSION['avatar_img_mime']);
+}
 
 if (!empty($_POST)) {
   debugLog('POST：' . print_r($_POST, true));
@@ -21,6 +30,27 @@ if (!empty($_POST)) {
   $name = $_POST['name'];
   $like_tool = $_POST['like_tool'];
   $bio = $_POST['bio'];
+
+  $avatar_img = (!empty($_FILES['avatar_img'])) ? imageToBlob($_FILES['avatar_img'], 'avatar_img') : '';
+  if (empty($avatar_img)) {
+    if (!empty($_SESSION['avatar_img'])) {
+      $avatar_img = $_SESSION['avatar_img'];
+    } else {
+      $avatar_img = (!empty($dbFormData)) ? $dbFormData['avatar_img'] : '';
+    }
+  } else {
+    $_SESSION['avatar_img'] = $avatar_img;
+  }
+  $avatar_img_mime = (!empty($_FILES['avatar_img']['type'])) ? $_FILES['avatar_img']['type'] : '';
+  if (empty($avatar_img_mime)) {
+    if (!empty($_SESSION['avatar_img_mime'])) {
+      $avatar_img_mime = $_SESSION['avatar_img_mime'];
+    } else {
+      $avatar_img_mime = (!empty($dbFormData)) ? $dbFormData['avatar_img_mime'] : '';
+    }
+  } else {
+    $_SESSION['avatar_img_mime'] = $avatar_img_mime;
+  }
 
   // 未入力チェック
   validEmpty($email, 'email');
@@ -62,14 +92,27 @@ if (!empty($_POST)) {
       try {
         debugLog('ユーザー情報更新');
         $dbh = dbConnect();
-        $sql = 'UPDATE users SET name = :name, email = :email, like_tool = :like_tool, bio = :bio WHERE id = :id';
-        $data = array(
-          ':id' => $_SESSION['user_id'],
-          ':name' => $name,
-          ':email' => $email,
-          ':like_tool' => $like_tool,
-          ':bio' => $bio,
-        );
+        if (empty($avatar_img)) {
+          $sql = 'UPDATE users SET name = :name, email = :email, like_tool = :like_tool, bio = :bio WHERE id = :id';
+          $data = array(
+            ':id' => $_SESSION['user_id'],
+            ':name' => $name,
+            ':email' => $email,
+            ':like_tool' => $like_tool,
+            ':bio' => $bio,
+          );
+        } else {
+          $sql = 'UPDATE users SET name = :name, email = :email, like_tool = :like_tool, bio = :bio, avatar_img = :avatar_img, avatar_img_mime = :avatar_img_mime WHERE id = :id';
+          $data = array(
+            ':id' => $_SESSION['user_id'],
+            ':name' => $name,
+            ':email' => $email,
+            ':like_tool' => $like_tool,
+            ':bio' => $bio,
+            ':avatar_img' => $avatar_img,
+            ':avatar_img_mime' => $avatar_img_mime,
+          );
+        }
 
         $stmt = queryPost($dbh, $sql, $data);
 
@@ -150,14 +193,16 @@ require_once('header.php');
 
       <!-- プロフィール画像 -->
       <div class="input-msg">
-        <?php echo getErrMsg('pic'); ?>
+        <?php echo getErrMsg('avatar_img'); ?>
       </div>
+      <div class="form-input-container">
       <label class="form-label form-label-file">
-        プロフィール画像
-        <div class="form-input-file">
-          <input type="file" name="pic" hidden>
-        </div>
-      </label>
+        ツール画像
+          <input type="hidden" name="MAX_FILE_SIZE" value="1500000">
+          <input type="file" name="avatar_img" id="js-img-input" hidden>
+          <img src="<?php echo getImageAvatar(); ?>" id="js-img-show" class="form-input-file-img">
+        </label>
+      </div>
 
       <input type="submit" class="form-btn" value="変更">
     </form>

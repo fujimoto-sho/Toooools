@@ -19,9 +19,9 @@ $err_msg = array();
 // 定数
 //-------------------------------------
 // ログイン有効期限のデフォルト（1時間）
-define('LOGIN_TIME_DEFAULT', 60*60);
+define('LOGIN_TIME_DEFAULT', 60 * 60);
 // ログイン有効期限の最大（30日）
-define('LOGIN_TIME_LONG', 60*60*24*30);
+define('LOGIN_TIME_LONG', 60 * 60 * 24 * 30);
 
 //-------------------------------------
 // メッセージ
@@ -44,6 +44,7 @@ define('SUC02', 'パスワードを変更しました。');
 define('SUC03', 'パスワードの再設定が完了しました。');
 define('SUC04', '投稿が完了しました。');
 define('SUC05', '投稿を編集しました。');
+define('SUC06', 'リプライを送信しました。');
 
 //-------------------------------------
 // セッション
@@ -270,7 +271,7 @@ function getTool($id)
   }
 }
 // パスワード変更
-function changePassword($pass, $userId) 
+function changePassword($pass, $userId)
 {
   global $err_msg;
   try {
@@ -292,10 +293,65 @@ function changePassword($pass, $userId)
     return true;
 
   } catch (Exception $e) {
-    error_log('エラー発生：' .$e->getMessage());
+    error_log('エラー発生：' . $e->getMessage());
     $err_msg['common'] = MSG02;
   }
 
+}
+// 投稿データ取得
+function getToolDetail($t_id)
+{
+
+  debugLog('投稿データ取得処理');
+  
+  try {
+    $dbh = dbConnect();
+    $sql = 'SELECT u.id user_id, u.name user_name, u.avatar_img, u.avatar_img_mime, t.tool_name, t.tool_introduction, t.tool_img, t.tool_img_mime , t.created_at FROM tools t LEFT JOIN users u ON u.id = t.user_id WHERE t.id = :tid AND t.delete_flg = 0 AND u.delete_flg = 0';
+    $data = array(
+      ':tid' => $t_id,
+    );
+
+    $stmt = queryPost($dbh, $sql, $data);
+
+    if (!$stmt) {
+      debugLog('投稿データを取得できませんでした');
+      return 0;
+    }
+
+    debugLog('投稿データを取得できました');
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+    return 0;
+  }
+}
+// リプライデータ取得
+function getReplies($t_id)
+{
+  debugLog('リプライデータ取得処理');
+  
+  try {
+    $dbh = dbConnect();
+    $sql = 'SELECT r.message, r.created_at, u.name user_name, u.avatar_img, u.avatar_img_mime FROM replies r LEFT JOIN users u ON u.id = r.tool_id WHERE r.tool_id = :tid AND r.delete_flg = 0';
+    $data = array(
+      ':tid' => $t_id,
+    );
+
+    $stmt = queryPost($dbh, $sql, $data);
+
+    if (!$stmt) {
+      debugLog('リプライデータを取得できませんでした');
+      return 0;
+    }
+
+    debugLog('リプライデータを取得できました');
+    return $stmt->fetchAll();
+
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+    return 0;
+  } 
 }
 
 //-------------------------------------
@@ -410,6 +466,32 @@ function getImage($isCreate, $t_id, $key)
   return '';
 
 }
+// imgタグのsrcに指定
+function getImageAvatar()
+{
+  global $avatar_img;
+  global $avatar_img_mime;
+  if (!empty($avatar_img)) {
+    $content = base64_encode($avatar_img);
+    return 'data:' . $avatar_img_mime . ';base64,' . $content;
+  }
+
+  return '';
+
+}
+// imgタグのsrcに指定
+function showImage($tool_img, $tool_img_mime)
+{
+  if (!empty($tool_img)) {
+    $content = base64_encode($tool_img);
+    return 'data:' . $tool_img_mime . ';base64,' . $content;
+  }
+
+  // if (!$isCreate && empty($_FILES[$key])) return 'imageImport.php?t_id=' . $t_id;
+
+  return '';
+
+}
 // ランダムな文字列を生成する
 function makeRandStr($length = 10)
 {
@@ -420,4 +502,46 @@ function makeRandStr($length = 10)
   }
 
   return $str;
+}
+// ページネーション
+function pagenation($nowPage, $pageCount)
+{
+  // 最小ページ、最大ページの設定
+  if ($nowPage === 1) {
+    $minPage = 1;
+    $maxPage = $nowPage + 4;
+  } elseif ($nowPage === 2) {
+    $minPage = 1;
+    $maxPage = $nowPage + 3;
+  } elseif ($nowPage === $pageCount) {
+    $minPage = $nowPage - 4;
+    $maxPage = $pageCount;
+  } elseif ($nowPage === $pageCount - 1) {
+    $minPage = $nowPage - 3;
+    $maxPage = $pageCount;
+  } else {
+    $minPage = $nowPage - 2;
+    $maxPage = $nowPage + 2;
+  }
+
+  // 最小ページが0以下にならないようにする
+  if ($minPage < 1) $minPage = 1;
+  // 最大ページがページ数以上にならないようにする
+  if ($maxPage > $pageCount) $maxPage = $pageCount;
+
+  // 最初のページに移動するためのリンク作成
+  if ($nowPage !== $minPage) {
+    echo '<li class="pagenation-item"><a href=' . $minPage . '">&lt;</a></li>';
+  }
+
+  // クリックされたページ数に移動するためのリンク作成
+  for ($i = $minPage; $i <= $maxPage; $i++) {
+    $classNowPage = ($i === $nowPage) ? ' pagination-item-now' : '';
+    echo '<li class="pagenation-item' . $classNowPage . '"><a href=' . $i . '">' . $i . '</a></li>';
+  }
+  
+  // 最後のページに移動するためのリンク作成
+  if ($nowPage !== $maxPage) {
+    echo '<li class="pagenation-item"><a href=' . $maxPage . '">&gt;</a></li>';
+  }
 }

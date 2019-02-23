@@ -1,91 +1,143 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>TOP | Toooools</title>
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="tool/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <!-- ヘッダー -->
-  <header class="header">
-    <h1 class="logo">Toooools</h1>
-    <nav class="top-nav">
-      <ul>
-        <li><a class="top-nav-link top-nav-login" href="#">ログイン</a></li>
-        <li><a class="top-nav-link top-nav-signup" href="#">ユーザー登録</a></li>
-      </ul>
-    </nav>
-  </header>
+<?php
+//*************************************
+// 投稿詳細
+//*************************************
 
-  <!-- メイン -->
-  <main class="main site-width one-column">
+// 共通変数・関数読み込み
+require_once('function.php');
 
-    <!-- 投稿 -->
-    <div class="post-detail">
-      <div class="post-list">
-        <img src="img/user-icon-1.jpg" alt="" class="post-user-img">
-        <p class="post-user-name">ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユ名ユーザーザ</p>
-        <time class="post-time" datetime="2018-02-03 11:22:55">2018年02月03日 11時22分55秒</time>
-        <h1 class="post-tool-name">ツール名ツール名ツール名ツール名ツール名ツ名ツール名名ツール名ール名</h1>
-        <div class="post-wrap-center">
-          <p class="post-tool-introduction">
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-            ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介ツール紹介
-          </p>
-          <img src="img/javascript.jpg" alt="" class="post-tool-img">
-        </div>
-        <div class="post-wrap-icon">
-          <i class="fas fa-reply"></i>
-          <span class="post-reply-count">9</span>
-          <i class="fas fa-heart"></i>
-          <span class="post-like-count">9</span>
-          <i class="fas fa-angle-down fa-lg"></i>
-        </div>
-      </div>
+// 開始ログ
+debugLogStart('投稿詳細ページ');
 
-      <div class="post-detail-reply">
-        <form action="">
-          <input type="text">
-          <input type="submit" value="送信">
-        </form>
-      </div>
+$t_id = (!empty($_GET['t_id'])) ? $_GET['t_id'] : '';
+$postData = (!empty($t_id)) ? getToolDetail($t_id) : '';
+$repliesData = (!empty($t_id)) ? getReplies($t_id) : '';
 
-      <div class="post-list">
-        <div class="post-detail-reply-icon">
-          <i class="fas fa-reply"></i>
-          reply
-        </div>
-        <img src="img/user-icon-1.jpg" alt="" class="post-user-img">
-        <p class="post-user-name">ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユ名ユーザーザ</p>
-        <time class="post-time" datetime="2018-02-03 11:22:55">2018年02月03日 11時22分55秒</time>
-        <p class="post-reply-text">
-          いいですね！
+if (empty($postData)) {
+  debugLog('データが取得できなかったため、トップページに遷移します。');
+  header("Location:index.php");
+}
+
+if (!empty($_POST)) {
+  debugLog('POST：' . print_r($_POST, true));
+
+  $reply = (!empty($_POST['reply'])) ? $_POST['reply'] : '';
+
+  // 未入力チェック
+  validEmpty($reply, 'reply');
+
+  if (empty($err_msg)) {
+    // ツール名
+    // 最大文字数チェック
+    validMaxLen($reply, 'reply', 140);
+
+    if (empty($err_msg)) {
+      debugLog('バリデーションOK');
+
+      try {
+        $dbh = dbConnect();
+        debugLog('リプライ投稿');
+
+        $sql = 'INSERT INTO replies (message, tool_id, user_id, created_at)';
+        $sql .= 'VALUES (:message, :tid, :uid, :date)';
+        $data = array(
+          ':message' => $reply,
+          ':tid' => $t_id,
+          ':uid' => $_SESSION['user_id'],
+          ':date' => date('Y-m-d H:i:s'),
+        );
+
+        $stmt = queryPost($dbh, $sql, $data);
+
+        if ($stmt) {
+          debugLog('リプライ投稿更新成功');
+
+          // フラッシュメッセージセット
+          $_SESSION['flash_msg'] = SUC06;
+          debugLog('投稿詳細に遷移します。');
+
+          header("Location:postDetail.php?t_id=" . $t_id);
+        } else {
+          debugLog('ユーザー情報更新失敗');
+          $err_msg['common'] = MSG02;
+        }
+
+      } catch (Exception $e) {
+        error_log('エラー発生：' . $e->getMessage());
+        $err_msg['common'] = MSG02;
+      }
+    }
+  }
+}
+
+// 終了ログ
+debugLogEnd();
+$pageTitle = '投稿詳細';
+require_once('header.php');
+?>
+
+<!-- メイン -->
+<main class="main site-width one-column">
+
+  <!-- 投稿 -->
+  <div class="post-detail">
+    <div class="post-list">
+      <img src="<?php echo showImage($postData['avatar_img'], $postData['avatar_img_mime']); ?>" alt="" class="post-user-img">
+      <p class="post-user-name"><?php echo $postData['user_name']; ?></p>
+      <time class="post-time" datetime="<?php echo $postData['created_at'] ?>"><?php echo $postData['created_at']; ?></time>
+      <h1 class="post-tool-name"><?php echo $postData['tool_name']; ?></h1>
+      <div class="post-wrap-center">
+        <p class="post-tool-introduction">
+          <?php echo $postData['tool_introduction']; ?>
         </p>
+        <img src="<?php echo showImage($postData['tool_img'], $postData['tool_img_mime']); ?>" alt="" class="post-tool-img">
       </div>
-      <div class="post-list">
-        <div class="post-detail-reply-icon">
-          <i class="fas fa-reply"></i>
-          reply
-        </div>
-        <img src="img/user-icon-1.jpg" alt="" class="post-user-img">
-        <p class="post-user-name">ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユーザ名ユ名ユーザーザ</p>
-        <time class="post-time" datetime="2018-02-03 11:22:55">2018年02月03日 11時22分55秒</time>
-        <p class="post-reply-text">
-          いいですね！
-        </p>
+      <div class="post-wrap-icon">
+        <i class="fas fa-reply"></i>
+        <span class="post-reply-count"><?php echo count($repliesData) ?></span>
+        <i class="fas fa-heart"></i>
+        <span class="post-like-count">9</span>
+        <i class="fas fa-angle-down fa-lg"></i>
       </div>
-
     </div>
 
-  </main>
+    <div class="post-detail-reply">
+      <form action="" method="post">
+        <!-- 共通メッセージ -->
+        <div class="input-msg">
+          <?php echo getErrMsg('common'); ?>
+        </div>
+        <div class="input-msg">
+          <?php echo getErrMsg('reply'); ?>
+        </div>
+        <input type="text" name="reply" value="<?php echo getFormData('reply'); ?>">
+        <input type="submit" value="送信">
+      </form>
+    </div>
 
-  <!-- フッター -->
-  <footer class="footer">
-    Copyright fujisho All Rights Reserved.
-  </footer>
-  </html>
-</body>
+    <?php
+      if(!empty($repliesData)) :
+        foreach($repliesData as $row) :
+    ?>
+          <div class="post-list">
+            <div class="post-detail-reply-icon">
+              <i class="fas fa-reply"></i>
+              reply
+            </div>
+            <img src="<?php echo showImage($postData['avatar_img'], $postData['avatar_img_mime']); ?>" alt="" class="post-user-img">
+            <p class="post-user-name"><?php echo $row['user_name']; ?></p>
+            <time class="post-time" datetime="<?php echo $row['created_at']; ?>"><?php echo $row['created_at']; ?></time>
+            <p class="post-reply-text">
+              <?php echo $row['message']; ?>
+            </p>
+          </div>
+    <?php
+        endforeach;
+      endif;
+    ?>
+
+  </div>
+
+</main>
+
+<?php require_once('footer.php'); ?>
