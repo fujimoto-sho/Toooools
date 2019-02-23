@@ -326,6 +326,73 @@ function getToolDetail($t_id)
     return 0;
   }
 }
+// 投稿データ取得
+function getPost($order, $searchTarget, $searchWord, $nowPage)
+{
+
+  debugLog('全ての投稿データ取得処理');
+  
+  try {
+    $dbh = dbConnect();
+    $data = array();
+    $sql = 'SELECT
+      u.id user_id
+    , u.name user_name
+    , u.avatar_img
+    , u.avatar_img_mime
+    , t.id tool_id
+    , t.tool_name
+    , t.tool_introduction
+    , t.tool_img
+    , t.tool_img_mime
+    , t.created_at
+    , IFNULL(l.like_cnt, 0) like_cnt
+    , IFNULL(r.reply_cnt, 0) reply_cnt
+    FROM tools t
+    LEFT JOIN users u
+    ON u.id = t.user_id
+    LEFT JOIN (SELECT tools_id, COUNT(*) like_cnt FROM likes GROUP BY tools_id) l
+    ON l.tools_id = t.id
+    LEFT JOIN (SELECT tool_id, COUNT(*) reply_cnt FROM replies GROUP BY tool_id) r
+    ON r.tool_id = t.id
+    WHERE t.delete_flg = 0
+    AND u.delete_flg = 0';
+
+    if ($searchTarget === 'user_name') $target = 'u.name';
+    if ($searchTarget === 'tool_name') $target = 't.tool_name';
+    if ($searchTarget === 'tool_introduction') $target = 't.tool_introduction';
+    if (!empty($searchWord) && !empty($target)) {
+      $sql .= " AND " . $target . " LIKE :searchWord";
+      $data = array(
+        ':searchWord' => '%' . $searchWord . '%',
+      );
+    }
+    if ($order === 'create_desc') {
+      $sql .= ' ORDER BY t.created_at DESC';
+    } elseif ($order === 'create_asc') {
+      $sql .= ' ORDER BY t.created_at ASC';
+    } elseif ($order === 'like_desc') {
+      $sql .= ' ORDER BY IFNULL(l.like_cnt, 0) DESC';
+    }
+    if ($nowPage !== 0) {
+      $sql .= ' LIMIT 10 OFFSET ' . (($nowPage - 1) * 10);
+    }
+
+    $stmt = queryPost($dbh, $sql, $data);
+
+    if (!$stmt) {
+      debugLog('投稿データを取得できませんでした');
+      return 0;
+    }
+
+    debugLog('投稿データを取得できました');
+    return $stmt->fetchAll();
+
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+    return 0;
+  }
+}
 // リプライデータ取得
 function getReplies($t_id)
 {
@@ -524,24 +591,37 @@ function pagenation($nowPage, $pageCount)
     $maxPage = $nowPage + 2;
   }
 
+  echo '<div class="pagenation">';
+  echo '<ul class="pagenation-list">';
+
   // 最小ページが0以下にならないようにする
   if ($minPage < 1) $minPage = 1;
   // 最大ページがページ数以上にならないようにする
   if ($maxPage > $pageCount) $maxPage = $pageCount;
 
+  // 遷移先URL作成
+  $url = 'index.php?';
+  if (!empty($_GET['order'])) $url .= 'order=' . $_GET['order'] . '&';
+  if (!empty($_GET['search_target'])) $url .= 'search_target=' . $_GET['search_target'] . '&';
+  if (!empty($_GET['search_word'])) $url .= 'search_word=' . $_GET['search_word'] . '&';
+  $url .= 'p=';
+
   // 最初のページに移動するためのリンク作成
   if ($nowPage !== $minPage) {
-    echo '<li class="pagenation-item"><a href=' . $minPage . '">&lt;</a></li>';
+    echo '<li class="pagenation-item"><a href="' . $url . $minPage . '">&lt;</a></li>';
   }
 
   // クリックされたページ数に移動するためのリンク作成
   for ($i = $minPage; $i <= $maxPage; $i++) {
     $classNowPage = ($i === $nowPage) ? ' pagination-item-now' : '';
-    echo '<li class="pagenation-item' . $classNowPage . '"><a href=' . $i . '">' . $i . '</a></li>';
+    echo '<li class="pagenation-item' . $classNowPage . '"><a href="' . $url . $i . '">' . $i . '</a></li>';
   }
   
   // 最後のページに移動するためのリンク作成
   if ($nowPage !== $maxPage) {
-    echo '<li class="pagenation-item"><a href=' . $maxPage . '">&gt;</a></li>';
+    echo '<li class="pagenation-item"><a href="' . $url . $maxPage . '">&gt;</a></li>';
   }
+
+  echo '</ul>';
+  echo '</div>';
 }
