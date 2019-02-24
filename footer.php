@@ -37,6 +37,27 @@
         reader.readAsDataURL(file);
 
       });
+
+      // お気に入り送信
+      $('.js-like-icon').on('click', function () {
+        $.ajax({
+          type: "POST",
+          url: "ajaxLike.php",
+          data:{
+            'tool_id': $(this).data('tool_id'),
+          },
+          dataType: "text",
+        })
+        .done( (data) => {
+          if (data !== undefined && data !== null && data !== '') {
+            $(this).toggleClass('fa-heart-active');
+            $(this).siblings('.post-like-count').text(data);
+          }
+          console.log(data);
+        })
+        .fail( (data) => {
+        });
+      });
     });
   </script>
 </body>

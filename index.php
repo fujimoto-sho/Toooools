@@ -84,7 +84,7 @@ require_once('header.php');
             <div class="post-wrap-icon">
               <i class="fas fa-reply"></i>
               <span class="post-reply-count"><?php echo $row['reply_cnt']; ?></span>
-              <i class="fas fa-heart"></i>
+              <i class="fas fa-heart js-like-icon <?php if ($row['like_cnt'] > 0) echo 'fa-heart-active' ?>" data-tool_id="<?php echo $row['tool_id']; ?>"></i>
               <span class="post-like-count"><?php echo $row['like_cnt']; ?></span>
               <i class="fas fa-angle-down fa-lg"></i>
             </div>

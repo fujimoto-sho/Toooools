@@ -12,6 +12,7 @@ debugLogStart('投稿詳細ページ');
 $t_id = (!empty($_GET['t_id'])) ? $_GET['t_id'] : '';
 $postData = (!empty($t_id)) ? getToolDetail($t_id) : '';
 $repliesData = (!empty($t_id)) ? getReplies($t_id) : '';
+$likeCnt = (!empty($t_id)) ? getLikes($t_id) : 0;
 
 if (empty($postData)) {
   debugLog('データが取得できなかったため、トップページに遷移します。');
@@ -94,8 +95,8 @@ require_once('header.php');
       <div class="post-wrap-icon">
         <i class="fas fa-reply"></i>
         <span class="post-reply-count"><?php echo count($repliesData) ?></span>
-        <i class="fas fa-heart"></i>
-        <span class="post-like-count">9</span>
+        <i class="fas fa-heart js-like-icon <?php if ($likeCnt > 0) echo 'fa-heart-active' ?>" data-tool_id="<?php echo $postData['tool_id']; ?>"></i>
+        <span class="post-like-count"><?php echo $likeCnt; ?></span>
         <i class="fas fa-angle-down fa-lg"></i>
       </div>
     </div>

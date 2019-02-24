@@ -306,7 +306,7 @@ function getToolDetail($t_id)
   
   try {
     $dbh = dbConnect();
-    $sql = 'SELECT u.id user_id, u.name user_name, u.avatar_img, u.avatar_img_mime, t.tool_name, t.tool_introduction, t.tool_img, t.tool_img_mime , t.created_at FROM tools t LEFT JOIN users u ON u.id = t.user_id WHERE t.id = :tid AND t.delete_flg = 0 AND u.delete_flg = 0';
+    $sql = 'SELECT u.id user_id, u.name user_name, u.avatar_img, u.avatar_img_mime, t.id tool_id, t.tool_name, t.tool_introduction, t.tool_img, t.tool_img_mime , t.created_at FROM tools t LEFT JOIN users u ON u.id = t.user_id WHERE t.id = :tid AND t.delete_flg = 0 AND u.delete_flg = 0';
     $data = array(
       ':tid' => $t_id,
     );
@@ -331,7 +331,7 @@ function getPost($order, $searchTarget, $searchWord, $nowPage)
 {
 
   debugLog('全ての投稿データ取得処理');
-  
+
   try {
     $dbh = dbConnect();
     $data = array();
@@ -419,6 +419,35 @@ function getReplies($t_id)
     error_log('エラー発生：' . $e->getMessage());
     return 0;
   } 
+}
+// お気に入りデータ取得
+function getLikes($t_id)
+{
+  debugLog('お気に入りデータ取得処理');
+  
+  try {
+    $dbh = dbConnect();
+    $sql = 'SELECT COUNT(*) cnt FROM likes WHERE tools_id = :tid AND user_id = :uid';
+    $data = array(
+      ':tid' => $t_id,
+      ':uid' => $_SESSION['user_id'],
+    );
+
+    $stmt = queryPost($dbh, $sql, $data);
+
+    if (!$stmt) {
+      debugLog('お気に入りデータを取得できませんでした');
+      return 0;
+    }
+
+    debugLog('お気に入りデータを取得できました');
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return (int)$result['cnt'];
+
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+    return 0;
+  }
 }
 
 //-------------------------------------
@@ -624,4 +653,29 @@ function pagenation($nowPage, $pageCount)
 
   echo '</ul>';
   echo '</div>';
+}
+// ログイン認証
+function isLogin()
+{
+  debugLog('ログイン認証を行います。');
+
+  // セッションにlogin_dateが存在したらログイン済と判断する
+  if (!empty($_SESSION['login_date'])) {
+    debugLog('ログイン済ユーザーです。');
+
+    // 有効期限の検証
+    $maxLoginTime = $_SESSION['login_date'] + $_SESSION['login_limit'];
+    if ($maxLoginTime < time()) {
+      debugLog('ログイン有効期限切れです');
+      session_destroy();
+      return false;
+
+    } else {
+      return true;
+    }
+
+  } else {
+    debugLog('未ログインユーザーです');
+      return false;
+  }
 }
