@@ -374,9 +374,24 @@ input, select,textarea {
   border: none;
   margin: 20px auto;
 }
+.prof-side-btn a {
+  color: #fff;
+}
+.prof-side-bio {
+  border-bottom: 1px solid rgb(158, 161, 199);
+  margin: 10px;
+}
+.prof-side-bio-title{
+  text-align: center;
+  font-weight: bold;
+}
+.prof-side-bio-content{
+  font-size: 1.4rem;
+}
 .prof-top {
   position: relative;
   height: 160px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .prof-top-img {
@@ -420,6 +435,9 @@ input, select,textarea {
 .prof-top-nav ul a {
   color: #fff;
   letter-spacing: 0.2rem;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 /*===============================
  * icon

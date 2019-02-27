@@ -58,6 +58,11 @@
         .fail( (data) => {
         });
       });
+
+      // 投稿削除
+      $('#js-post-delete').on('click', function() {
+        $('#js-dlt-form').submit();
+      });
     });
   </script>
 </body>

@@ -25,7 +25,7 @@ if (!empty($_POST)) {
   validEmpty($pass_new_re, 'pass_new_re');
   
   if (empty($err_msg)) {
-    $dbUser = getUser();
+    $dbUser = getUser($_SESSION['user_id']);
 
     // 現在のパスワードが合っているかチェック
     if (empty($dbUser) || !password_verify($pass_old, $dbUser['password'])) {
