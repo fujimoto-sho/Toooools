@@ -12,7 +12,7 @@ debugLogStart('プロフィール編集ページ');
 // ログイン認証
 require_once('auth.php');
 
-$dbFormData = getUser();
+$dbFormData = getUser($_SESSION['user_id']);
 if (!empty($dbFormData)) {
   $avatar_img = $dbFormData['avatar_img'];
   $avatar_img_mime = $dbFormData['avatar_img_mime'];

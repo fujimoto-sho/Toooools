@@ -19,7 +19,7 @@ if (empty($postData)) {
   header("Location:index.php");
 }
 
-if (!empty($_POST)) {
+if (!empty($_POST) && empty($_POST['delete_tool_id'])) {
   debugLog('POST：' . print_r($_POST, true));
 
   $reply = (!empty($_POST['reply'])) ? $_POST['reply'] : '';
@@ -71,11 +71,73 @@ if (!empty($_POST)) {
   }
 }
 
+// 削除処理
+if (!empty($_POST['delete_tool_id']) && $_GET['t_id'] === $_POST['delete_tool_id']) {
+  debugLog('POST：' . print_r($_POST, true));
+
+  $dlt_t_id = $_POST['delete_tool_id'];
+  $postData = (!empty($dlt_t_id)) ? getToolDetail($dlt_t_id) : '';
+  if ($postData['user_id'] === $_SESSION['user_id']) {
+    try {
+      $dbh = dbConnect();
+      debugLog('投稿削除');
+
+      $sql1 = 'UPDATE tools SET delete_flg = 1 WHERE id = :tid';
+      $sql2 = 'UPDATE replies SET delete_flg = 1 WHERE tool_id = :tid';
+      $sql3 = 'DELETE FROM likes WHERE tools_id = :tid';
+      $data = array(
+        ':tid' => $dlt_t_id,
+      );
+
+      // トランザクション開始
+      $dbh->beginTransaction();
+
+      // コミットorロールバックを必ず行うため、try-catchで囲む
+      try {
+        // 更新処理を実行
+        $stmt1 = queryPost($dbh, $sql1, $data);
+        $stmt2 = queryPost($dbh, $sql2, $data);
+        $stmt3 = queryPost($dbh, $sql3, $data);
+
+        // 全て成功したらコミット
+        $dbh->commit();
+      } catch (PDOException $e) {
+        // どれか1つでもエラーが発生したらロールバック
+        $dbh->rollback();
+
+        // エラー処理は上位で行う
+        throw $e;
+      }
+
+      if ($stmt1->rowCount() > 0) {
+        debugLog('投稿削除成功');
+
+        // フラッシュメッセージセット
+        $_SESSION['flash_msg'] = SUC07;
+        debugLog('一覧ページに遷移します。');
+
+        header("Location:index.php");
+      } else {
+        debugLog('投稿削除失敗');
+        $err_msg['common'] = MSG02;
+      }
+
+    } catch (Exception $e) {
+      error_log('エラー発生：' . $e->getMessage());
+      $err_msg['common'] = MSG02;
+    }
+  }
+}
+
 // 終了ログ
 debugLogEnd();
 $pageTitle = '投稿詳細';
 require_once('header.php');
 ?>
+
+<form id="js-dlt-form" method="post">
+  <input type="hidden" name="delete_tool_id" value="<?php echo $t_id; ?>">
+</form>
 
 <!-- メイン -->
 <main class="main site-width one-column">
@@ -98,6 +160,7 @@ require_once('header.php');
         <i class="fas fa-heart js-like-icon <?php if ($likeCnt > 0) echo 'fa-heart-active' ?>" data-tool_id="<?php echo $postData['tool_id']; ?>"></i>
         <span class="post-like-count"><?php echo $likeCnt; ?></span>
         <i class="fas fa-angle-down fa-lg"></i>
+        <span id="js-post-delete" class="post-delete">削除</span>
       </div>
     </div>
 

@@ -45,6 +45,7 @@ define('SUC03', 'パスワードの再設定が完了しました。');
 define('SUC04', '投稿が完了しました。');
 define('SUC05', '投稿を編集しました。');
 define('SUC06', 'リプライを送信しました。');
+define('SUC07', '投稿を削除しました。');
 
 //-------------------------------------
 // セッション
@@ -216,7 +217,7 @@ function queryPost($dbh, $sql, $data)
   return $stmt;
 }
 // usersテーブル取得
-function getUser()
+function getUser($u_id)
 {
   global $err_msg;
   debugLog('ユーザーデータ取得');
@@ -226,7 +227,7 @@ function getUser()
     $dbh = dbConnect();
     $sql = 'SELECT * FROM users WHERE id = :uid AND delete_flg = 0';
     $data = array(
-      ":uid" => $_SESSION['user_id'],
+      ":uid" => $u_id,
     );
     $stmt = queryPost($dbh, $sql, $data);
 
@@ -355,7 +356,7 @@ function getPost($order, $searchTarget, $searchWord, $nowPage)
     ON l.tools_id = t.id
     LEFT JOIN (SELECT tool_id, COUNT(*) reply_cnt FROM replies GROUP BY tool_id) r
     ON r.tool_id = t.id
-    WHERE t.delete_flg = 0
+    WHERE t.delete_flg = 0zz
     AND u.delete_flg = 0';
 
     if ($searchTarget === 'user_name') $target = 'u.name';
@@ -367,16 +368,70 @@ function getPost($order, $searchTarget, $searchWord, $nowPage)
         ':searchWord' => '%' . $searchWord . '%',
       );
     }
-    if ($order === 'create_desc') {
-      $sql .= ' ORDER BY t.created_at DESC';
-    } elseif ($order === 'create_asc') {
+    if ($order === 'create_asc') {
       $sql .= ' ORDER BY t.created_at ASC';
     } elseif ($order === 'like_desc') {
       $sql .= ' ORDER BY IFNULL(l.like_cnt, 0) DESC';
+    } else {
+      $sql .= ' ORDER BY t.created_at DESC';
     }
     if ($nowPage !== 0) {
       $sql .= ' LIMIT 10 OFFSET ' . (($nowPage - 1) * 10);
     }
+
+    $stmt = queryPost($dbh, $sql, $data);
+
+    if (!$stmt) {
+      debugLog('投稿データを取得できませんでした');
+      return 0;
+    }
+
+    debugLog('投稿データを取得できました');
+    return $stmt->fetchAll();
+
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+    return 0;
+  }
+}
+// 投稿データ取得
+function getPostInProfile($u_id, $isLikeShow)
+{
+
+  debugLog('全ての投稿データ取得処理');
+
+  try {
+    $dbh = dbConnect();
+    $sql = 'SELECT
+      u.id user_id
+    , u.name user_name
+    , u.avatar_img
+    , u.avatar_img_mime
+    , t.id tool_id
+    , t.tool_name
+    , t.tool_introduction
+    , t.tool_img
+    , t.tool_img_mime
+    , t.created_at
+    , IFNULL(l.like_cnt, 0) like_cnt
+    , IFNULL(r.reply_cnt, 0) reply_cnt
+    FROM tools t
+    LEFT JOIN users u
+    ON u.id = t.user_id
+    LEFT JOIN (SELECT tools_id, COUNT(*) like_cnt FROM likes GROUP BY tools_id) l
+    ON l.tools_id = t.id
+    LEFT JOIN (SELECT tool_id, COUNT(*) reply_cnt FROM replies GROUP BY tool_id) r
+    ON r.tool_id = t.id
+    WHERE t.delete_flg = 0
+    AND u.delete_flg = 0
+    AND u.id = :uid';
+    if ($isLikeShow) {
+      $sql .= ' AND t.id IN (SELECT tools_id FROM likes WHERE user_id = :uid)';
+    }
+    $sql .= ' ORDER BY t.created_at';
+    $data = array(
+      ':uid' => $u_id
+    );
 
     $stmt = queryPost($dbh, $sql, $data);
 
@@ -431,6 +486,33 @@ function getLikes($t_id)
     $data = array(
       ':tid' => $t_id,
       ':uid' => $_SESSION['user_id'],
+    );
+
+    $stmt = queryPost($dbh, $sql, $data);
+
+    if (!$stmt) {
+      debugLog('お気に入りデータを取得できませんでした');
+      return 0;
+    }
+
+    debugLog('お気に入りデータを取得できました');
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return (int)$result['cnt'];
+
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+    return 0;
+  }
+}
+function getUserLikes($u_id)
+{
+  debugLog('お気に入りデータ取得処理');
+  
+  try {
+    $dbh = dbConnect();
+    $sql = 'SELECT COUNT(*) cnt FROM likes WHERE user_id = :uid';
+    $data = array(
+      ':uid' => $u_id,
     );
 
     $stmt = queryPost($dbh, $sql, $data);
