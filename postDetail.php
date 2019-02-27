@@ -85,6 +85,7 @@ if (!empty($_POST['delete_tool_id']) && $_GET['t_id'] === $_POST['delete_tool_id
       $sql1 = 'UPDATE tools SET delete_flg = 1 WHERE id = :tid';
       $sql2 = 'UPDATE replies SET delete_flg = 1 WHERE tool_id = :tid';
       $sql3 = 'DELETE FROM likes WHERE tools_id = :tid';
+      
       $data = array(
         ':tid' => $dlt_t_id,
       );
