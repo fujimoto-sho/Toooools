@@ -17,7 +17,8 @@ body {
 * {
   box-sizing: border-box;
 }
-h1, ul {
+h1,
+ul {
   margin: 0;
 }
 ul {
@@ -30,7 +31,9 @@ a {
   width: 980px;
   margin: 0 auto;
 }
-input, select,textarea {
+input,
+select,
+textarea {
   font-size: 1.6rem;
   display: block;
   padding: 0;
@@ -44,7 +47,7 @@ input, select,textarea {
  * header
  *=============================*/
 .header {
-  background-color: #0F2950;
+  background-color: #0f2950;
   width: 100%;
   height: 80px;
   line-height: 80px;
@@ -65,9 +68,9 @@ input, select,textarea {
   float: left;
   width: 120px;
 }
-.top-nav-link{
+.top-nav-link {
   color: #fff;
-  border-left: 1px solid rgba(255, 255, 255); 
+  border-left: 1px solid rgba(255, 255, 255);
   height: 100%;
   width: 100%;
   display: block;
@@ -87,7 +90,7 @@ input, select,textarea {
 .footer {
   position: fixed;
   bottom: 0;
-  background-color: #0F2950;
+  background-color: #0f2950;
   color: #fff;
   width: 100%;
   height: 40px;
@@ -128,12 +131,20 @@ input, select,textarea {
   border: none;
 }
 .search-form input[type="submit"] {
-  background-color: rgba(0, 0, 0);
-  color: #fff;
-  width: 80px;
+  background-color: #ffcc66;
+  width: 100%;
   height: 40px;
+  border: none;
+  margin-top: 15px;
   margin-bottom: 10px;
-  float: right;
+}
+.sideber-line {
+  border-bottom: 1px solid rgb(158, 161, 199);
+  margin: 10px;
+}
+.sidebar-page-count {
+  text-align: center;
+  font-size: 1.4rem;
 }
 /*===============================
  * post 
@@ -156,6 +167,7 @@ input, select,textarea {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  object-fit: cover;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
 }
@@ -189,8 +201,8 @@ input, select,textarea {
 }
 .post-tool-img {
   float: right;
-  width: 150px;
-  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
 }
 .post-wrap-icon {
   text-align: right;
@@ -214,17 +226,17 @@ input, select,textarea {
 }
 .post-detail-reply input[type="text"] {
   display: inline-block;
-  width: 450px;
+  width: 460px;
   height: 40px;
   background-color: #f6f5f5;
   padding: 5px;
-  border: none; 
+  border: none;
 }
 .post-detail-reply input[type="submit"] {
   display: inline-block;
   width: 100px;
   height: 40px;
-  background-color: #FFCC66;
+  background-color: #ffcc66;
   border: none;
   margin-left: 10px;
 }
@@ -277,7 +289,7 @@ input, select,textarea {
   text-align: center;
 }
 .input-msg {
-  color: #FF4F50;
+  color: #ff4f50;
 }
 .form-label {
   display: block;
@@ -300,7 +312,7 @@ input, select,textarea {
 .form-btn {
   width: 100%;
   height: 40px;
-  background-color: #FFCC66;
+  background-color: #ffcc66;
   border: none;
   margin-top: 40px;
 }
@@ -378,14 +390,13 @@ input, select,textarea {
   color: #fff;
 }
 .prof-side-bio {
-  border-bottom: 1px solid rgb(158, 161, 199);
   margin: 10px;
 }
-.prof-side-bio-title{
+.prof-side-bio-title {
   text-align: center;
   font-weight: bold;
 }
-.prof-side-bio-content{
+.prof-side-bio-content {
   font-size: 1.4rem;
 }
 .prof-top {
@@ -400,6 +411,7 @@ input, select,textarea {
   height: 150px;
   left: 10px;
   border-radius: 50%;
+  object-fit: cover;
   z-index: 2;
 }
 .prof-top-user-name {
@@ -418,7 +430,7 @@ input, select,textarea {
   position: absolute;
   width: 100%;
   height: 50px;
-  background-color: #FFCC99;
+  background-color: #ffcc99;
   bottom: 0;
   overflow: hidden;
   z-index: 1;
@@ -442,6 +454,6 @@ input, select,textarea {
 /*===============================
  * icon
  *=============================*/
-.fa-heart-active{
-  color: rgb(140, 212, 24);
+.fa-heart-active {
+  color: #fa8072;
 }

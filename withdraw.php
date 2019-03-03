@@ -46,19 +46,19 @@ if (!empty($_POST)) {
     }
 
     // usersテーブルが処理されていたら成功とする
-    if ($stmt1 && $stmt1->rowCount() > 0) {
+    if (!empty($stmt1->rowCount())) {
       debugLog('退会完了');
 
       debugLog('ログイン画面に遷移します。');
       header("Location:login.php");
     } else {
       debugLog('退会失敗');
-      $err_msg['common'] = MSG02;
+      $err_msg['common'] = ERRMSG['DEFAULT'];
     }
 
   } catch (Exception $e) {
     error_log('エラー発生：' . $e->getMessage());
-    $err_msg['common'] = MSG02;
+    $err_msg['common'] = ERRMSG['DEFAULT'];
   }
 
 }
@@ -66,6 +66,7 @@ if (!empty($_POST)) {
 // 終了ログ
 debugLogEnd();
 $pageTitle = '退会';
+// ヘッダー;
 require_once('header.php');
 ?>
 
@@ -90,4 +91,5 @@ require_once('header.php');
   </div>
 </main>
 
- <?php require_once('footer.php'); ?>
+<!-- フッター -->
+<?php require_once('footer.php'); ?>

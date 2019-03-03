@@ -12,15 +12,17 @@ debugLogStart('プロフィール編集ページ');
 // ログイン認証
 require_once('auth.php');
 
+// フォーム表示用のデータ取得
 $dbFormData = getUser($_SESSION['user_id']);
-if (!empty($dbFormData)) {
-  $avatar_img = $dbFormData['avatar_img'];
-  $avatar_img_mime = $dbFormData['avatar_img_mime'];
-}
 
+// POSTされていなくても画像を表示する
+$img = (!empty($dbFormData['img'])) ? $dbFormData['img'] : '';
+$mime = (!empty($dbFormData['mime'])) ? $dbFormData['mime'] : '';
+
+// POSTされていなかったら画像保持用のセッションを削除する
 if (empty($_POST)) {
-  unset($_SESSION['avatar_img']);
-  unset($_SESSION['avatar_img_mime']);
+  unset($_SESSION['img']);
+  unset($_SESSION['mime']);
 }
 
 if (!empty($_POST)) {
@@ -30,27 +32,8 @@ if (!empty($_POST)) {
   $name = $_POST['name'];
   $like_tool = $_POST['like_tool'];
   $bio = $_POST['bio'];
-
-  $avatar_img = (!empty($_FILES['avatar_img'])) ? imageToBlob($_FILES['avatar_img'], 'avatar_img') : '';
-  if (empty($avatar_img)) {
-    if (!empty($_SESSION['avatar_img'])) {
-      $avatar_img = $_SESSION['avatar_img'];
-    } else {
-      $avatar_img = (!empty($dbFormData)) ? $dbFormData['avatar_img'] : '';
-    }
-  } else {
-    $_SESSION['avatar_img'] = $avatar_img;
-  }
-  $avatar_img_mime = (!empty($_FILES['avatar_img']['type'])) ? $_FILES['avatar_img']['type'] : '';
-  if (empty($avatar_img_mime)) {
-    if (!empty($_SESSION['avatar_img_mime'])) {
-      $avatar_img_mime = $_SESSION['avatar_img_mime'];
-    } else {
-      $avatar_img_mime = (!empty($dbFormData)) ? $dbFormData['avatar_img_mime'] : '';
-    }
-  } else {
-    $_SESSION['avatar_img_mime'] = $avatar_img_mime;
-  }
+  $img = getUploadImage($dbFormData, true);
+  $mime = getUploadImage($dbFormData, false);
 
   // 未入力チェック
   validEmpty($email, 'email');
@@ -59,10 +42,8 @@ if (!empty($_POST)) {
   if (empty($err_msg)) {
     // Email
     if ($_POST['email'] !== $dbFormData['email']) {
-      // フォーマットチェック
-      validEmailFormat($email, 'email');
-      // 最大文字数チェック
-      validMaxLen($email, 'email');
+      // Emailのバリデーション
+      validEmail($email, 'email');
       // 重複チェック
       validEmailDup($email, 'email');
     }
@@ -70,20 +51,19 @@ if (!empty($_POST)) {
     // ユーザー名
     if ($_POST['name'] !== $dbFormData['name']) {
       // 最大文字数チェック
-      validMaxLen($name, 'name');
+      validMaxLen($name, 'name', 30);
     }
 
-
     // 一番好きなツール
-    if ($_POST['like_tool'] !== $dbFormData['like_tool']) { 
+    if ($_POST['like_tool'] !== $dbFormData['like_tool']) {
       // 最大文字数チェック
-      validMaxLen($like_tool, 'like_tool');
+      validMaxLen($like_tool, 'like_tool', 30);
     }
 
     // 自己紹介
     if ($_POST['bio'] !== $dbFormData['bio']) {
       // 最大文字数チェック
-      validMaxLen($bio, 'bio', 500);
+      validMaxLen($bio, 'bio', 150);
     }
 
     if (empty($err_msg)) {
@@ -92,7 +72,8 @@ if (!empty($_POST)) {
       try {
         debugLog('ユーザー情報更新');
         $dbh = dbConnect();
-        if (empty($avatar_img)) {
+        if (empty($img)) {
+          // 画像が選択されていない場合
           $sql = 'UPDATE users SET name = :name, email = :email, like_tool = :like_tool, bio = :bio WHERE id = :id';
           $data = array(
             ':id' => $_SESSION['user_id'],
@@ -102,47 +83,49 @@ if (!empty($_POST)) {
             ':bio' => $bio,
           );
         } else {
-          $sql = 'UPDATE users SET name = :name, email = :email, like_tool = :like_tool, bio = :bio, avatar_img = :avatar_img, avatar_img_mime = :avatar_img_mime WHERE id = :id';
+          // 画像が選択されている場合
+          $sql = 'UPDATE users SET name = :name, email = :email, like_tool = :like_tool, bio = :bio, img = :img, mime = :mime WHERE id = :id';
           $data = array(
             ':id' => $_SESSION['user_id'],
             ':name' => $name,
             ':email' => $email,
             ':like_tool' => $like_tool,
             ':bio' => $bio,
-            ':avatar_img' => $avatar_img,
-            ':avatar_img_mime' => $avatar_img_mime,
+            ':img' => $img,
+            ':mime' => $mime,
           );
         }
 
         $stmt = queryPost($dbh, $sql, $data);
 
-        if ($stmt) {
+        if (!empty($stmt->rowCount())) {
           debugLog('ユーザー情報更新成功');
 
           // フラッシュメッセージセット
-          $_SESSION['flash_msg'] = SUC01;
+          $_SESSION['flash_msg'] = SUCMSG['PROF_EDIT'];
           debugLog('プロフィールに遷移します。');
 
           header("Location:profile.php");
         } else {
           debugLog('ユーザー情報更新失敗');
-          $err_msg['common'] = MSG02;
+          $err_msg['common'] = ERRMSG['DEFAULT'];
         }
 
       } catch (Exception $e) {
         error_log('エラー発生：' . $e->getMessage());
-        $err_msg['common'] = MSG02;
+        $err_msg['common'] = ERRMSG['DEFAULT'];
       }
     }
-
   }
 }
 
 // 終了ログ
 debugLogEnd();
 $pageTitle = 'プロフィール編集';
+// ヘッダー;
 require_once('header.php');
 ?>
+
 <!-- メイン -->
 <main class="main site-width one-column">
   <!-- フォーム -->
@@ -159,7 +142,7 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('email'); ?>
       </div>
-      <label class="form-label <?php if (!empty(getErrMsg('email'))) echo 'err'; ?>">
+      <label class="form-label <?php echo getErrClassName('email'); ?>">
         Email
         <input type="text" name="email" value="<?php echo getFormData('email'); ?>">
       </label>
@@ -168,17 +151,17 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('name'); ?>
       </div>
-      <label class="form-label <?php if (!empty(getErrMsg('name'))) echo 'err'; ?>">
+      <label class="form-label <?php echo getErrClassName('name'); ?>">
         ユーザー名
         <input type="text" name="name" value="<?php echo getFormData('name'); ?>">
       </label>
 
-      <!-- 一番お気に入りのツール -->
+      <!-- 一番好きなツール -->
       <div class="input-msg">
         <?php echo getErrMsg('like_tool'); ?>
       </div>
-      <label class="form-label <?php if (!empty(getErrMsg('like_tool'))) echo 'err'; ?>">
-        一番お気に入りのツール
+      <label class="form-label <?php echo getErrClassName('like_tool'); ?>">
+        一番好きなツール
         <input type="text" name="like_tool" value="<?php echo getFormData('like_tool'); ?>">
       </label>
 
@@ -186,21 +169,21 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('bio'); ?>
       </div>
-      <label class="form-label <?php if (!empty(getErrMsg('bio'))) echo 'err'; ?>">
+      <label class="form-label <?php echo getErrClassName('bio'); ?>">
         自己紹介
         <textarea name="bio" cols="30" rows="5"><?php echo getFormData('bio'); ?></textarea>
       </label>
 
       <!-- プロフィール画像 -->
       <div class="input-msg">
-        <?php echo getErrMsg('avatar_img'); ?>
+        <?php echo getErrMsg('img'); ?>
       </div>
       <div class="form-input-container">
       <label class="form-label form-label-file">
         ツール画像
           <input type="hidden" name="MAX_FILE_SIZE" value="1500000">
-          <input type="file" name="avatar_img" id="js-img-input" hidden>
-          <img src="<?php echo getImageAvatar(); ?>" id="js-img-show" class="form-input-file-img">
+          <input type="file" name="img" id="js-img-input" hidden>
+          <img src="<?php echo showImage($img, $mime, 'avatar'); ?>" id="js-img-show" class="form-input-file-img">
         </label>
       </div>
 
@@ -209,4 +192,5 @@ require_once('header.php');
   </div>
 </main>
 
+<!-- フッター -->
 <?php require_once('footer.php'); ?>
