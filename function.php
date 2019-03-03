@@ -221,7 +221,7 @@ function dbConnect()
   switch (getenv('PHP_ENV')) {
     case 'heroku':
       $url = parse_url(getenv('DATABASE_URL'));
-      $dsn = sprintf('pgsql:dbname=' . substr($url['path'], 1) . ';host=' . $url['host'] . ';charset=utf8');
+      $dsn = sprintf('pgsql:dbname=' . substr($url['path'], 1) . ';host=' . $url['host']);
       $user = $url['user'];
       $pass = $url['pass'];
       break;
