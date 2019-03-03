@@ -1,5 +1,5 @@
 <?php
-//*************************************
+ //*************************************
 // ログイン機能
 //*************************************
 
@@ -23,19 +23,11 @@ if (!empty($_POST)) {
   validEmpty($pass, 'pass');
 
   if (empty($err_msg)) {
-    // Email
-    // フォーマットチェック
-    validEmailFormat($email, 'email');
-    // 最大文字数チェック
-    validMaxLen($email, 'email');
+    // Emailのバリデーション
+    validEmail($email, 'email');
 
-    // パスワード
-    // 最小文字数チェック
-    validMinLen($pass, 'pass');
-    // 最大文字数チェック
-    validMaxLen($pass, 'pass');
-    // 半角英数字チェック
-    validHalf($pass, 'pass');
+    // パスワードのバリデーション
+    validPass($pass, 'pass');
 
     if (empty($err_msg)) {
       debugLog('バリデーションOK');
@@ -48,36 +40,34 @@ if (!empty($_POST)) {
           ':email' => $email,
         );
         $stmt = queryPost($dbh, $sql, $data);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch();
 
         debugLog('クエリの取得結果：' . print_r($result, true));
 
-        $isPassMatch = false;
-        if (!empty($result)) $isPassMatch = password_verify($pass, $result['password']);
+        // パスワードの照合
+        $isPassMatch = (!empty($result)) ? password_verify($pass, $result['password']) : false;
 
         if ($isPassMatch) {
           debugLog('パスワードOK');
 
-          // ログイン日時
+          // ログイン日時設定
           $_SESSION['login_date'] = time();
-          // ログイン有効期限
+          // ログイン有効期限設定（チェックがついていたら長くする）
           $loginLimit = (empty($_POST['limit'])) ? LOGIN_TIME_DEFAULT : LOGIN_TIME_LONG;
           $_SESSION['login_limit'] = $loginLimit;
-          // ユーザーID
+          // ユーザーID設定
           $_SESSION['user_id'] = $result['id'];
 
           debugLog('プロフィールへ遷移します。');
           header("Location:profile.php");
         } else {
-          debugLog('該当データなし');
-          $err_msg['pass'] = MSG09;
+          debugLog('パスワードNG');
+          $err_msg['pass'] = ERRMSG['LOGIN'];
         }
-
       } catch (Exception $e) {
         error_log('エラー発生：' . $e->getMessage());
-        $err_msg['common'] = MSG02;
+        $err_msg['common'] = ERRMSG['DEFAULT'];
       }
-
     }
   }
 }
@@ -85,51 +75,53 @@ if (!empty($_POST)) {
 // 終了ログ
 debugLogEnd();
 $pageTitle = 'ログイン';
+// ヘッダー;
 require_once('header.php');
 ?>
 
 <!-- メイン -->
 <main class="main site-width one-column">
-  <!-- フォーム -->
-  <div class="form-container">
-    <form class="form" method="post">
-      <h1 class="form-title">ログイン</h1>
+    <!-- フォーム -->
+    <div class="form-container">
+        <form class="form" method="post">
+            <h1 class="form-title">ログイン</h1>
 
-      <!-- 共通メッセージ -->
-      <div class="input-msg">
-        <?php echo getErrMsg('common'); ?>
-      </div>
+            <!-- 共通メッセージ -->
+            <div class="input-msg">
+                <?php echo getErrMsg('common'); ?>
+            </div>
 
-      <!-- Email -->
-      <div class="input-msg">
-        <?php echo getErrMsg('email'); ?>
-      </div>
-      <label class="form-label <?php if (!empty(getErrMsg('email'))) echo 'err'; ?>">
-        Email
-        <input type="text" name="email" value="<?php echo getFormData('email'); ?>">
-      </label>
+            <!-- Email -->
+            <div class="input-msg">
+                <?php echo getErrMsg('email'); ?>
+            </div>
+            <label class="form-label <?php echo getErrClassName('email'); ?>">
+                Email
+                <input type="text" name="email" value="<?php echo getFormData('email'); ?>">
+            </label>
 
-      <!-- パスワード -->
-      <div class="input-msg">
-        <?php echo getErrMsg('pass'); ?>
-      </div>
-      <label class="form-label <?php if (!empty(getErrMsg('pass'))) echo 'err'; ?>">
-        パスワード
-        <input type="password" name="pass" id="" placeholder="英数字6文字以上" value="<?php echo getFormData('pass'); ?>">
-      </label>
+            <!-- パスワード -->
+            <div class="input-msg">
+                <?php echo getErrMsg('pass'); ?>
+            </div>
+            <label class="form-label <?php echo getErrClassName('pass'); ?>">
+                パスワード
+                <input type="password" name="pass" id="" placeholder="英数字6文字以上" value="<?php echo getFormData('pass'); ?>">
+            </label>
 
-      <label class="form-label-checkbox">
-        <input type="checkbox" name="limit">
-        <span>ログイン情報を保持する</span>
-      </label>
+            <label class="form-label-checkbox">
+                <input type="checkbox" name="limit">
+                <span>ログイン情報を保持する</span>
+            </label>
 
-      <input type="submit" class="form-btn" value="ログイン">
+            <input type="submit" class="form-btn" value="ログイン">
 
-      <div class="form-link-list">
-        <a href="signup.php">新規登録</a> | <a href="passRemindSend.php">パスワードを忘れてしまった方はこちら</a> 
-      </div>
-    </form>
-  </div>
+            <div class="form-link-list">
+                <a href="signup.php">新規登録</a> | <a href="passRemindSend.php">パスワードを忘れてしまった方はこちら</a>
+            </div>
+        </form>
+    </div>
 </main>
 
-<?php require_once('footer.php'); ?>
+<!-- フッター -->
+<?php require_once('footer.php'); ?> 
