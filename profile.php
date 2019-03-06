@@ -1,5 +1,5 @@
 <?php
- //*************************************
+//*************************************
 // プロフィール
 //*************************************
 
@@ -36,26 +36,30 @@ require_once('header.php');
 
 <!-- プロフトップ -->
 <div class="prof-top">
-  <img src="<?php echo showImage($dbUser['img'], $dbUser['mime'], 'avatar'); ?>" alt="" class="prof-top-img">
-  <p class="prof-top-user-name">
-    <?php if (!empty($dbUser['name'])) echo $dbUser['name']; ?>
-  </p>
-  <nav class="prof-top-nav">
-    <ul>
-      <li>
-        <a href="profile.php<?php if (!empty($u_id)) echo '?u_id=' . $u_id; ?>" class="prof-top-link">
-          投稿<br>
-          <?php echo (!empty(getPostInProfile($u_id, false))) ? count(getPostInProfile($u_id, false)) : 0; ?>
-        </a>
-      </li>
-      <li>
-        <a href="profile.php?show=like<?php if (!empty($u_id)) echo '&u_id=' . $u_id; ?>" class="prof-top-link">
-          いいね<br>
-          <?php echo getLikeCount('', $u_id); ?>
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <div class="prof-top-user">
+    <img src="<?php echo showImage($dbUser['img'], $dbUser['mime'], 'avatar'); ?>" alt="" class="prof-top-img">
+    <p class="prof-top-user-name">
+      <?php if (!empty($dbUser['name'])) echo $dbUser['name']; ?>
+    </p>
+  </div>
+  <div class="prof-top-nav-wrap">
+    <nav class="prof-top-nav">
+      <ul>
+        <li>
+          <a href="profile.php<?php if (!empty($u_id)) echo '?u_id=' . $u_id; ?>" class="prof-top-link">
+            投稿<br>
+            <?php echo (!empty(getPostInProfile($u_id, false))) ? count(getPostInProfile($u_id, false)) : 0; ?>
+          </a>
+        </li>
+        <li>
+          <a href="profile.php?show=like<?php if (!empty($u_id)) echo '&u_id=' . $u_id; ?>" class="prof-top-link">
+            いいね<br>
+            <?php echo getLikeCount('', $u_id); ?>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 
 <!-- メイン -->
@@ -65,20 +69,20 @@ require_once('header.php');
 
     <!-- サイドバー -->
     <div class="sidebar">
-      <div class="prof-side-bio">
-        <p class="prof-side-bio-title">自己紹介</p>
-        <p class="prof-side-bio-content">
+      <div class="prof-side-content">
+        <p class="prof-side-content-title">自己紹介</p>
+        <p class="prof-side-content-main">
           <?php if (!empty($dbUser['name'])) echo $dbUser['bio']; ?>
         </p>
       </div>
       <div class="sideber-line"></div>
-      <div class="prof-side-bio">
-        <p class="prof-side-bio-title">一番好きなツール</p>
-        <p class="prof-side-bio-content">
+      <div class="prof-side-content">
+        <p class="prof-side-content-title">一番好きなツール</p>
+        <p class="prof-side-content-main">
           <?php if (!empty($dbUser['like_tool'])) echo $dbUser['like_tool']; ?>
         </p>
       </div>
-      <?php if ($u_id === $_SESSION['user_id']): ?>
+      <?php if (isLogin() && $u_id === $_SESSION['user_id']): ?>
         <div class="sideber-line"></div>
       <?php endif; ?>
       <?php if (isLogin() && $u_id === $_SESSION['user_id']): ?>
@@ -112,4 +116,4 @@ require_once('header.php');
 </main>
 
 <!-- フッター -->
-<?php require_once('footer.php'); ?> 
+<?php require_once('footer.php'); ?>

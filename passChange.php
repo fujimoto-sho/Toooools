@@ -1,5 +1,5 @@
 <?php
- //*************************************
+//*************************************
 // パスワード変更ページ
 //*************************************
 
@@ -111,47 +111,47 @@ require_once('header.php');
 
 <!-- メイン -->
 <main class="main site-width one-column">
-    <!-- フォーム -->
-    <div class="form-container">
-        <form class="form" method="post">
-            <h1 class="form-title">パスワード変更</h1>
+  <!-- フォーム -->
+  <div class="form-container">
+    <form class="form" method="post">
+      <h1 class="form-title">パスワード変更</h1>
 
-            <!-- 共通メッセージ -->
-            <div class="input-msg">
-                <?php echo getErrMsg('common'); ?>
-            </div>
+      <!-- 共通メッセージ -->
+      <div class="input-msg">
+        <?php echo getErrMsg('common'); ?>
+      </div>
 
-            <!-- 現在のパスワード -->
-            <div class="input-msg">
-                <?php echo getErrMsg('pass_old'); ?>
-            </div>
-            <label class="form-label <?php echo getErrClassName('pass_old'); ?>">
-                現在のパスワード
-                <input type="password" name="pass_old" value="<?php echo getFormData('pass_old'); ?>">
-            </label>
+      <!-- 現在のパスワード -->
+      <div class="input-msg">
+        <?php echo getErrMsg('pass_old'); ?>
+      </div>
+      <label class="form-label <?php echo getErrClassName('pass_old'); ?>">
+        現在のパスワード
+        <input type="password" name="pass_old" value="<?php echo getFormData('pass_old'); ?>">
+      </label>
 
-            <!-- 新しいパスワード -->
-            <div class="input-msg">
-                <?php echo getErrMsg('pass_new'); ?>
-            </div>
-            <label class="form-label <?php echo getErrClassName('pass_new'); ?>">
-                新しいパスワード
-                <input type="password" name="pass_new" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_new'); ?>">
-            </label>
+      <!-- 新しいパスワード -->
+      <div class="input-msg">
+        <?php echo getErrMsg('pass_new'); ?>
+      </div>
+      <label class="form-label <?php echo getErrClassName('pass_new'); ?>">
+        新しいパスワード
+        <input type="password" name="pass_new" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_new'); ?>">
+      </label>
 
-            <!-- 新しいパスワード（再入力）-->
-            <div class="input-msg">
-                <?php echo getErrMsg('pass_new_re'); ?>
-            </div>
-            <label class="form-label <?php echo getErrClassName('pass_new_re'); ?>">
-                新しいパスワード（再入力）
-                <input type="password" name="pass_new_re" id="" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_new_re'); ?>">
-            </label>
+      <!-- 新しいパスワード（再入力）-->
+      <div class="input-msg">
+        <?php echo getErrMsg('pass_new_re'); ?>
+      </div>
+      <label class="form-label <?php echo getErrClassName('pass_new_re'); ?>">
+        新しいパスワード（再入力）
+        <input type="password" name="pass_new_re" id="" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_new_re'); ?>">
+      </label>
 
-            <input type="submit" class="form-btn" value="変更">
-        </form>
-    </div>
+      <input type="submit" class="form-btn" value="変更">
+    </form>
+  </div>
 </main>
 
 <!-- フッター -->
-<?php require_once('footer.php'); ?> 
+<?php require_once('footer.php'); ?>

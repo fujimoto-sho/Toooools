@@ -17,11 +17,11 @@ $(function() {
   };
 
   // 画像ライブプレビュー
-  $imgInput = $('.form-label-file');
+  $imgInput = $('.form-input-container');
   $imgInput.on('dragover', function(e) {
     e.stopPropagation();
     e.preventDefault();
-    $imgInput.css('border', '5px solid red');
+    $imgInput.css('border', '3px dashed #ccc');
   });
   $imgInput.on('dragleave', function(e) {
     e.stopPropagation();
@@ -37,6 +37,7 @@ $(function() {
       $img.attr('src', reader.result);
     };
     reader.readAsDataURL(file);
+    $imgInput.css('border', 'none');
   });
 
   // いいね送信

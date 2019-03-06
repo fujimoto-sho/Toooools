@@ -90,7 +90,7 @@ if (!empty($_POST)) {
 
         $stmt = queryPost($dbh, $sql, $data);
 
-        if (!empty($stmt->rowCount())) {
+        if (!empty($stmt)) {
           debugLog('ツール情報更新成功');
 
           // フラッシュメッセージセット
@@ -155,9 +155,9 @@ require_once('header.php');
       <div class="input-msg">
         <?php echo getErrMsg('img'); ?>
       </div>
+      ツール画像
       <div class="form-input-container">
         <label class="form-label form-label-file">
-          ツール画像
           <input type="hidden" name="MAX_FILE_SIZE" value="1500000">
           <input type="file" name="img" id="js-img-input" hidden>
           <img src="<?php echo showImage($img, $mime, 'tool'); ?>" id="js-img-show" class="form-input-file-img">
@@ -170,4 +170,4 @@ require_once('header.php');
 </main>
 
 <!-- フッター -->
-<?php require_once('footer.php'); ?> 
+<?php require_once('footer.php'); ?>

@@ -1,5 +1,5 @@
 <?php
- //*************************************
+//*************************************
 // 共通変数・関数
 //*************************************
 
@@ -77,6 +77,7 @@ session_regenerate_id();
 // デバッグの出力判定
 // 本番時はfalseにしてログを出さないようにする
 $debugLogWrite = true;
+if (getenv('PHP_ENV') === 'heroku') $debugLogWrite = false;
 
 // デバッグログ出力
 function debugLog($msg)
@@ -218,6 +219,7 @@ function validEmail($email, $key)
 // データベース接続
 function dbConnect()
 {
+  // 本番環境と開発環境でつなぐDBを切り替える
   switch (getenv('PHP_ENV')) {
     case 'heroku':
       $url = parse_url(getenv('CLEARDB_DATABASE_URL'));
@@ -233,8 +235,6 @@ function dbConnect()
   }
 
   $options = array(
-    // SQL失敗時、エラーコードのみ設定
-    // PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT,
     // SQL失敗時、PDOExceptionをスロー
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     // デフォルトフェッチモードを連想配列に設定
@@ -256,7 +256,7 @@ function queryPost($dbh, $sql, $data)
     debugLog('クエリ失敗');
     debugLog('失敗したSQL：' . print_r($stmt, true));
     $err_msg['common'] = ERRMSG['DEFAULT'];
-    return 0;
+    return '';
   }
   debugLog('クエリ成功');
   return $stmt;
@@ -279,13 +279,13 @@ function getUser($u_id)
 
     if (!$stmt) {
       debugLog('ユーザーデータ取得失敗');
-      return 0;
+      return '';
     }
 
     return $stmt->fetch();
   } catch (Exception $e) {
     error_log('エラー発生：' . $e->getMessage());
-    return 0;
+    return '';
   }
 }
 
@@ -307,13 +307,13 @@ function getTool($t_id)
 
     if (!$stmt) {
       debugLog('ツールデータ取得失敗');
-      return 0;
+      return '';
     }
 
     return $stmt->fetch();
   } catch (Exception $e) {
     error_log('エラー発生：' . $e->getMessage());
-    return 0;
+    return '';
   }
 }
 
@@ -321,10 +321,11 @@ function getTool($t_id)
 function getToolDetail($t_id)
 {
   debugLog('投稿データ取得処理');
+  debugLog('ツールID：' . $t_id);
 
   try {
     $dbh = dbConnect();
-    $sql = 'SELECT 
+    $sql = 'SELECT
     u.id user_id
     , u.name user_name
     , u.img avatar_img
@@ -333,19 +334,19 @@ function getToolDetail($t_id)
     , t.name tool_name
     , t.introduction tool_introduction
     , t.img tool_img
-    , t.mime tool_img_mime 
-    , t.created_at 
+    , t.mime tool_img_mime
+    , t.created_at
     , IFNULL(l.like_cnt, 0) like_cnt
     , IFNULL(r.reply_cnt, 0) reply_cnt
-    FROM tools t 
-    LEFT JOIN users u 
-    ON u.id = t.user_id 
+    FROM tools t
+    LEFT JOIN users u
+    ON u.id = t.user_id
     LEFT JOIN (SELECT tool_id, COUNT(*) like_cnt FROM likes GROUP BY tool_id) l
     ON l.tool_id = t.id
     LEFT JOIN (SELECT tool_id, COUNT(*) reply_cnt FROM replies WHERE delete_flg = 0 GROUP BY tool_id) r
     ON r.tool_id = t.id
-    WHERE t.id = :tid 
-    AND t.delete_flg = 0 
+    WHERE t.id = :tid
+    AND t.delete_flg = 0
     AND u.delete_flg = 0';
     $data = array(
       ':tid' => $t_id,
@@ -355,13 +356,13 @@ function getToolDetail($t_id)
 
     if (!$stmt) {
       debugLog('投稿データを取得できませんでした');
-      return 0;
+      return '';
     }
 
     return $stmt->fetch();
   } catch (Exception $e) {
     error_log('エラー発生：' . $e->getMessage());
-    return 0;
+    return '';
   }
 }
 
@@ -419,14 +420,14 @@ function getPost($order, $searchTarget, $searchWord, $nowPage)
 
     if (!$stmt) {
       debugLog('投稿データを取得できませんでした');
-      return 0;
+      return '';
     }
 
     // 全行返す
     return $stmt->fetchAll();
   } catch (Exception $e) {
     error_log('エラー発生：' . $e->getMessage());
-    return 0;
+    return '';
   }
 }
 
@@ -434,7 +435,7 @@ function getPost($order, $searchTarget, $searchWord, $nowPage)
 function getPostInProfile($u_id, $isLikeShow)
 {
   debugLog('全ての投稿データ取得処理');
-
+  debugLog('ユーザーID：' . $u_id);
   try {
     $dbh = dbConnect();
     $sql = 'SELECT
@@ -473,14 +474,14 @@ function getPostInProfile($u_id, $isLikeShow)
 
     if (!$stmt) {
       debugLog('投稿データを取得できませんでした');
-      return 0;
+      return '';
     }
 
     // 全行返す
     return $stmt->fetchAll();
   } catch (Exception $e) {
     error_log('エラー発生：' . $e->getMessage());
-    return 0;
+    return '';
   }
 }
 
@@ -488,6 +489,7 @@ function getPostInProfile($u_id, $isLikeShow)
 function getReplies($t_id)
 {
   debugLog('リプライデータ取得処理');
+  debugLog('ツールID：' . $t_id);
 
   try {
     $dbh = dbConnect();
@@ -500,14 +502,14 @@ function getReplies($t_id)
 
     if (!$stmt) {
       debugLog('リプライデータを取得できませんでした');
-      return 0;
+      return '';
     }
 
     // 全行返す
     return $stmt->fetchAll();
   } catch (Exception $e) {
     error_log('エラー発生：' . $e->getMessage());
-    return 0;
+    return '';
   }
 }
 
@@ -515,6 +517,8 @@ function getReplies($t_id)
 function getLikeCount($t_id, $u_id)
 {
   debugLog('いいねデータ取得処理');
+  debugLog('ユーザーID：' . $u_id);
+  debugLog('ツールID：' . $t_id);
 
   try {
     $dbh = dbConnect();
@@ -534,40 +538,43 @@ function getLikeCount($t_id, $u_id)
 
     if (!$stmt) {
       debugLog('いいね情報を取得できませんでした');
-      return 0;
+      return '';
     }
 
     $result = $stmt->fetch();
     return (int)$result['cnt'];
   } catch (Exception $e) {
     error_log('エラー発生：' . $e->getMessage());
-    return 0;
+    return '';
   }
 }
 
 // パスワード変更
-function changePassword($pass, $userId)
+function changePassword($pass, $u_id)
 {
-  global $err_msg;
+  debugLog('いいねデータ取得処理');
+  debugLog('ユーザーID：' . $u_id);
+
   try {
     // データベース処理
     $dbh = dbConnect();
     $sql = 'UPDATE users SET password = :pass WHERE id = :id';
     $data = array(
       ':pass' => $pass,
-      ':id' => $userId,
+      ':id' => $u_id,
     );
     $stmt = queryPost($dbh, $sql, $data);
-
+    
     if (!empty($stmt->rowCount())) {
       debugLog('パスワード変更失敗');
       return false;
     }
-
+    
     debugLog('パスワード変更成功');
     return true;
   } catch (Exception $e) {
     error_log('エラー発生：' . $e->getMessage());
+    global $err_msg;
     $err_msg['common'] = ERRMSG['DEFAULT'];
   }
 }
@@ -809,7 +816,7 @@ function isLogin()
     $maxLoginTime = $_SESSION['login_date'] + $_SESSION['login_limit'];
     if ($maxLoginTime < time()) {
       debugLog('ログイン有効期限切れです');
-      session_destroy();
+      if (!empty($_SESSION)) session_destroy();
       return false;
     } else {
       return true;

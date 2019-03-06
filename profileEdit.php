@@ -98,7 +98,7 @@ if (!empty($_POST)) {
 
         $stmt = queryPost($dbh, $sql, $data);
 
-        if (!empty($stmt->rowCount())) {
+        if (!empty($stmt)) {
           debugLog('ユーザー情報更新成功');
 
           // フラッシュメッセージセット
@@ -174,13 +174,13 @@ require_once('header.php');
         <textarea name="bio" cols="30" rows="5"><?php echo getFormData('bio'); ?></textarea>
       </label>
 
-      <!-- プロフィール画像 -->
+      <!-- アバター -->
       <div class="input-msg">
         <?php echo getErrMsg('img'); ?>
       </div>
+      アバター
       <div class="form-input-container">
       <label class="form-label form-label-file">
-        ツール画像
           <input type="hidden" name="MAX_FILE_SIZE" value="1500000">
           <input type="file" name="img" id="js-img-input" hidden>
           <img src="<?php echo showImage($img, $mime, 'avatar'); ?>" id="js-img-show" class="form-input-file-img">

@@ -1,5 +1,5 @@
 <?php
- //*************************************
+//*************************************
 // パスワード再発行
 //*************************************
 
@@ -87,37 +87,34 @@ require_once('header.php');
 
 <!-- メイン -->
 <main class="main site-width one-column">
-    <!-- フォーム -->
-    <div class="form-container">
-        <form class="form" method="post">
-            <h1 class="form-title">パスワード再発行</h1>
-            <?php if (empty($isSendMail)) { ?>
-            <p class="form-p">
-                登録したメールアドレスを下記フォームに入力し、送信ボタンを押してください。<br>
-                入力したメールアドレスにパスワード再設定メールが通知されます。
-            </p>
-            <!-- Email -->
-            <div class="input-msg">
-                <?php echo getErrMsg('email'); ?>
-            </div>
-            <label class="form-label <?php echo getErrClassName('email'); ?>">
-                Email
-                <input type="text" name="email" value="<?php echo getFormData('email'); ?>">
-            </label>
+  <!-- フォーム -->
+  <div class="form-container">
+    <form class="form" method="post">
+        <h1 class="form-title">パスワード再発行</h1>
+        <?php if (empty($isSendMail)): ?>
+          <p class="form-p">
+            登録したメールアドレスを下記フォームに入力し、送信ボタンを押してください。<br>
+            入力したメールアドレスにパスワード再設定メールが通知されます。
+          </p>
+          <!-- Email -->
+          <div class="input-msg">
+            <?php echo getErrMsg('email'); ?>
+          </div>
+          <label class="form-label <?php echo getErrClassName('email'); ?>">
+            Email
+            <input type="text" name="email" value="<?php echo getFormData('email'); ?>">
+          </label>
 
-            <input type="submit" class="form-btn" value="送信">
-            <?php 
-          } else { ?>
-            <p class="form-p">
-                再発行用のメールを送信しました。
-            </p>
-            <?php
-
-          } ?>
-        </form>
-    </div>
+          <input type="submit" class="form-btn" value="送信">
+        <?php else: ?>
+          <p class="form-p">
+            再発行用のメールを送信しました。
+          </p>
+        <?php endif; ?>
+    </form>
+  </div>
 
 </main>
 
 <!-- フッター -->
-<?php require_once('footer.php'); ?> 
+<?php require_once('footer.php'); ?>
