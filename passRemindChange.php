@@ -1,5 +1,5 @@
 <?php
- //*************************************
+//*************************************
 // パスワード再設定
 //*************************************
 
@@ -58,7 +58,7 @@ if (!empty($_POST)) {
 
           $stmt = queryPost($dbh, $sql, $data);
 
-          if (!empty($stmt->rowCount())) {
+          if (!empty($stmt)) {
             debugLog('パスワード変更成功');
 
             $from = 'fujisho344@gmail.com';
@@ -112,38 +112,38 @@ require_once('header.php');
 
 <!-- メイン -->
 <main class="main site-width one-column">
-    <!-- フォーム -->
-    <div class="form-container">
-        <form class="form" method="post">
-            <h1 class="form-title">パスワード再設定</h1>
+  <!-- フォーム -->
+  <div class="form-container">
+    <form class="form" method="post">
+      <h1 class="form-title">パスワード再設定</h1>
 
-            <!-- 共通メッセージ -->
-            <div class="input-msg">
-                <?php echo getErrMsg('common'); ?>
-            </div>
+      <!-- 共通メッセージ -->
+      <div class="input-msg">
+        <?php echo getErrMsg('common'); ?>
+      </div>
 
-            <!-- 新しいパスワード -->
-            <div class="input-msg">
-                <?php echo getErrMsg('pass_new'); ?>
-            </div>
-            <label class="form-label <?php echo getErrClassName('pass_new'); ?>">
-                新しいパスワード
-                <input type="password" name="pass_new" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_new'); ?>">
-            </label>
+      <!-- 新しいパスワード -->
+      <div class="input-msg">
+        <?php echo getErrMsg('pass_new'); ?>
+      </div>
+      <label class="form-label <?php echo getErrClassName('pass_new'); ?>">
+        新しいパスワード
+        <input type="password" name="pass_new" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_new'); ?>">
+      </label>
 
-            <!-- 新しいパスワード（再入力）-->
-            <div class="input-msg">
-                <?php echo getErrMsg('pass_new_re'); ?>
-            </div>
-            <label class="form-label <?php echo getErrClassName('pass_new_re'); ?>">
-                新しいパスワード（再入力）
-                <input type="password" name="pass_new_re" id="" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_new_re'); ?>">
-            </label>
+      <!-- 新しいパスワード（再入力）-->
+      <div class="input-msg">
+        <?php echo getErrMsg('pass_new_re'); ?>
+      </div>
+      <label class="form-label <?php echo getErrClassName('pass_new_re'); ?>">
+        新しいパスワード（再入力）
+        <input type="password" name="pass_new_re" id="" placeholder="英数字6文字以上" value="<?php echo getFormData('pass_new_re'); ?>">
+      </label>
 
-            <input type="submit" class="form-btn" value="登録">
-        </form>
-    </div>
+      <input type="submit" class="form-btn" value="登録">
+    </form>
+  </div>
 </main>
 
 <!-- フッター -->
-<?php require_once('footer.php'); ?> 
+<?php require_once('footer.php'); ?>
