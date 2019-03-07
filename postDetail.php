@@ -182,12 +182,12 @@ require_once('header.php');
             </div>
             <img src="<?php echo showImage($postData['avatar_img'], $postData['avatar_img_mime'], 'avatar'); ?>" alt="" class="post-user-img">
             <p class="post-user-name">
-              <?php echo $row['user_name']; ?>
+              <?php echo sanitize($row['user_name']); ?>
             </p>
-            <time class="post-time" datetime="<?php echo $row['created_at']; ?>">
-              <?php echo $row['created_at']; ?></time>
+            <time class="post-time" datetime="<?php echo sanitize($row['created_at']); ?>">
+              <?php echo sanitize($row['created_at']); ?></time>
             <p class="post-reply-text">
-              <?php echo $row['message']; ?>
+              <?php echo sanitize($row['message']); ?>
             </p>
           </div>
     <?php

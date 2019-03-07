@@ -65,7 +65,7 @@ require_once('header.php');
       </label>
       <label>
         検索ワード
-        <input type="text" name="search_word" value="<?php if (!empty($_GET['search_word'])) echo $_GET['search_word']; ?>">
+        <input type="text" name="search_word" value="<?php if (!empty($_GET['search_word'])) echo sanitize($_GET['search_word']); ?>">
       </label>
       <input type="submit" value="検索">
     </form>

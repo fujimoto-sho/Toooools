@@ -619,7 +619,7 @@ function getErrMsg($key)
   // 存在しなかったら空白を返す
   if (empty($err_msg[$key])) return '';
 
-  return $err_msg[$key];
+  return sanitize($err_msg[$key]);
 }
 
 // エラーのクラス名取得
@@ -637,10 +637,10 @@ function getFormData($key)
   global $dbFormData;
 
   // POSTされていたら返す
-  if (isset($_POST[$key])) return htmlspecialchars($_POST[$key]);
+  if (isset($_POST[$key])) return sanitize($_POST[$key]);
 
   // SELECT結果があったら返す
-  if (!empty($dbFormData[$key])) return htmlspecialchars($dbFormData[$key]);
+  if (!empty($dbFormData[$key])) return sanitize($dbFormData[$key]);
 
   // 両方存在しなかったら空白を返す
   return '';
@@ -718,17 +718,17 @@ function showImage($img, $mime, $key)
   // 画像が存在した場合
   if (!empty($img)) {
     $content = base64_encode($img);
-    return 'data:' . $mime . ';base64,' . $content;
+    return sanitize('data:' . $mime . ';base64,' . $content);
   }
 
   // 画像が存在しなかった場合、それぞれのデフォルト画像を表示
   if ($key === 'avatar') {
     $content = base64_encode(file_get_contents('img/avatar_default.png'));
-    return 'data:img/png;base64,' . $content;
+    return sanitize('data:img/png;base64,' . $content);
   }
   if ($key === 'tool') {
     $content = base64_encode(file_get_contents('img/tool_default.png'));
-    return 'data:img/png;base64,' . $content;
+    return sanitize('data:img/png;base64,' . $content);
   }
 
   return '';
@@ -825,4 +825,11 @@ function isLogin()
     debugLog('未ログインユーザーです');
     return false;
   }
+}
+
+// サニタイズ
+function sanitize($str)
+{
+  if ($str === '') return '';
+  return htmlspecialchars($str);
 }

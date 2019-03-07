@@ -39,20 +39,20 @@ require_once('header.php');
   <div class="prof-top-user">
     <img src="<?php echo showImage($dbUser['img'], $dbUser['mime'], 'avatar'); ?>" alt="" class="prof-top-img">
     <p class="prof-top-user-name">
-      <?php if (!empty($dbUser['name'])) echo $dbUser['name']; ?>
+      <?php if (!empty($dbUser['name'])) echo sanitize($dbUser['name']); ?>
     </p>
   </div>
   <div class="prof-top-nav-wrap">
     <nav class="prof-top-nav">
       <ul>
         <li>
-          <a href="profile.php<?php if (!empty($u_id)) echo '?u_id=' . $u_id; ?>" class="prof-top-link">
+          <a href="profile.php<?php if (!empty($u_id)) echo '?u_id=' . sanitize($u_id); ?>" class="prof-top-link">
             投稿<br>
-            <?php echo (!empty(getPostInProfile($u_id, false))) ? count(getPostInProfile($u_id, false)) : 0; ?>
+            <?php echo sanitize((!empty(getPostInProfile($u_id, false))) ? count(getPostInProfile($u_id, false)) : 0); ?>
           </a>
         </li>
         <li>
-          <a href="profile.php?show=like<?php if (!empty($u_id)) echo '&u_id=' . $u_id; ?>" class="prof-top-link">
+          <a href="profile.php?show=like<?php if (!empty($u_id)) echo '&u_id=' . sanitize($u_id); ?>" class="prof-top-link">
             いいね<br>
             <?php echo getLikeCount('', $u_id); ?>
           </a>
@@ -72,14 +72,14 @@ require_once('header.php');
       <div class="prof-side-content">
         <p class="prof-side-content-title">自己紹介</p>
         <p class="prof-side-content-main">
-          <?php if (!empty($dbUser['name'])) echo $dbUser['bio']; ?>
+          <?php if (!empty($dbUser['name'])) echo sanitize($dbUser['bio']); ?>
         </p>
       </div>
       <div class="sideber-line"></div>
       <div class="prof-side-content">
         <p class="prof-side-content-title">一番好きなツール</p>
         <p class="prof-side-content-main">
-          <?php if (!empty($dbUser['like_tool'])) echo $dbUser['like_tool']; ?>
+          <?php if (!empty($dbUser['like_tool'])) echo sanitize($dbUser['like_tool']); ?>
         </p>
       </div>
       <?php if (isLogin() && $u_id === $_SESSION['user_id']): ?>
