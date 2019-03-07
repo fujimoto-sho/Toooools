@@ -2,11 +2,9 @@
 
 ## URL
 - アプリ
-  - Comming soon...
+  - https://toooools.herokuapp.com/
 - ワイヤーフレーム
-  - Comming soon...
-- データベース
-  - Comming soon...
+  - https://fujisho344.hateblo.jp/entry/2019/03/07/231538
 
 ## テストユーザー
 
