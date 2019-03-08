@@ -20,7 +20,7 @@
     <img src="<?php echo showImage($post['tool_img'], $post['tool_img_mime'], 'tool'); ?>" alt="ツール" class="post-tool-img">
   </div>
   <div class="post-wrap-icon">
-    <i class="fas fa-reply icon-pointer"></i>
+    <i class="fas fa-reply"></i>
     <span class="post-reply-count">
       <?php echo sanitize($post['reply_cnt']); ?>
     </span>
@@ -29,7 +29,7 @@
       <?php echo sanitize($post['like_cnt']); ?>
     </span>
     <?php if (isLogin() && $post['user_id'] === $_SESSION['user_id'] && basename($_SERVER['PHP_SELF']) === 'postDetail.php'): ?>
-      <a href="postEdit.php?t_id=<?php echo sanitize($post['tool_id']); ?>"><i class="fas fa-edit"></i></a>
+      <a href="postEdit.php?t_id=<?php echo sanitize($post['tool_id']); ?>"><i class="fas fa-edit icon-pointer"></i></a>
       <i class="fas fa-trash-alt js-delete-icon icon-pointer"></i>
     <?php endif; ?>
   </div>

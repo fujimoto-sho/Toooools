@@ -7,7 +7,7 @@
 require_once('function.php');
 
 // 開始ログ
-debugLogStart('パスワード再設定');
+debugLogStart('パスワード再発行');
 
 if (!empty($_POST)) {
   debugLog('POST：' . print_r($_POST, true));
@@ -50,7 +50,7 @@ if (!empty($_POST)) {
 
       // メール送信に必要な情報を変数に格納
       $from = 'fujisho344@gmail.com';
-      $to = 'fujisho344@gmail.com';
+      $to = $email;
       $subject = 'パスワード再設定';
       $message = <<<EOF
 お世話になっております。

@@ -10,7 +10,8 @@ require_once('function.php');
 debugLogStart('ユーザ登録ページ');
 
 if (!empty($_POST)) {
-  debugLog('POST：' . print_r($_POST, true));
+  // debugLog('POST：' . print_r($_POST, true));
+  debugLog('POST OK');
 
   $email = $_POST['email'];
   $name = $_POST['name'];

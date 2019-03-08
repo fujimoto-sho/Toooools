@@ -24,7 +24,8 @@ if ($_GET['k'] !== $_SESSION['auth_key']) {
 }
 
 if (!empty($_POST)) {
-  debugLog('POST：' . print_r($_POST, true));
+  // debugLog('POST：' . print_r($_POST, true));
+  debugLog('POST OK');
 
   $pass_new = $_POST['pass_new'];
   $pass_new_re = $_POST['pass_new_re'];
@@ -62,11 +63,9 @@ if (!empty($_POST)) {
             debugLog('パスワード変更成功');
 
             $from = 'fujisho344@gmail.com';
-            $to = 'fujisho344@gmail.com';
+            $to = $_SESSION['auth_email'];
             $subject = 'パスワード再設定完了';
             $message = <<<EOF
-{$dbUser['name']}　様
-
 お世話になっております。
 「Toooools」をご利用頂き誠にありがとうございます。
 

@@ -60,7 +60,7 @@ require_once('header.php');
         検索対象
         <select name="search_target" id="">
           <option value="tool_name" <?php if ($search_target === 'tool_name') echo 'selected'; ?>>ツール名</option>
-          <option value="tool_introduction" <?php if ($search_target === 'tool_introduction') echo 'selected'; ?>>ツール紹介文</option>
+          <option value="tool_introduction" <?php if ($search_target === 'tool_introduction') echo 'selected'; ?>>ツール紹介</option>
         </select>
       </label>
       <label>
