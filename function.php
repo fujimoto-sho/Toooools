@@ -28,30 +28,32 @@ define('LOGIN_TIME_DEFAULT', 60 * 60);
 define('LOGIN_TIME_LONG', 60 * 60 * 24 * 30);
 // 一覧ページで1ページに表示する最大件数
 define('ONE_PAGE_COUNT', 10);
+
 // エラーメッセージ
 define('ERRMSG', array(
-  'EMPTY' => '必須入力です。',
-  'DEFAULT' => 'エラーが発生しました。しばらく経ってからやり直してください。',
-  'EMAIL_DUP' => '既に登録されているメールアドレスです。',
-  'PASS_RE_NOT_EQUAL' => 'パスワード（再入力）が合っていません。',
-  'HALF' => '半角英数字のみ入力可能です。',
-  'MINLEN' => '文字以上で入力してください。',
-  'MAXLEN' => '文字以下で入力してください。',
-  'EMAIL_FORMAT' => 'Emailの形式が違います。',
-  'LOGIN' => 'メールアドレス、またはパスワードが違います。',
-  'PASS_NOW_NOT_EQUAL' => '現在のパスワードが違います。',
-  'PASS_NOW_NEW_EQUAL' => '現在のパスワードと新しいパスワードが同じです。',
+  'EMPTY'                 => '必須入力です。',
+  'DEFAULT'               => 'エラーが発生しました。しばらく経ってからやり直してください。',
+  'EMAIL_DUP'             => '既に登録されているメールアドレスです。',
+  'PASS_RE_NOT_EQUAL'     => 'パスワード（再入力）が合っていません。',
+  'HALF'                  => '半角英数字のみ入力可能です。',
+  'MINLEN'                => '文字以上で入力してください。',
+  'MAXLEN'                => '文字以下で入力してください。',
+  'EMAIL_FORMAT'          => 'Emailの形式が違います。',
+  'LOGIN'                 => 'メールアドレス、またはパスワードが違います。',
+  'PASS_NOW_NOT_EQUAL'    => '現在のパスワードが違います。',
+  'PASS_NOW_NEW_EQUAL'    => '現在のパスワードと新しいパスワードが同じです。',
   'PASS_NEW_RE_NOT_EQUAL' => '新しいパスワード（再入力）が合っていません。',
-  'EMAIL_NOT_EXISTS' => '登録されていないメールアドレスです。',
+  'EMAIL_NOT_EXISTS'      => '登録されていないメールアドレスです。',
 ));
+
 // サクセスメッセージ
 define('SUCMSG', array(
-  'PROF_EDIT' => 'プロフィールを変更しました。',
+  'PROF_EDIT'   => 'プロフィールを変更しました。',
   'PASS_CHANGE' => 'パスワードを変更しました。',
   'PASS_REMIND' => 'パスワードの再設定が完了しました。',
   'POST_INSERT' => '投稿が完了しました。',
   'POST_UPDATE' => '投稿を編集しました。',
-  'REPLY_SEND' => 'リプライを送信しました。',
+  'REPLY_SEND'  => 'リプライを送信しました。',
   'POST_DELETE' => '投稿を削除しました。',
 ));
 
@@ -209,7 +211,7 @@ function validEmail($email, $key)
   // フォーマットチェック
   validEmailFormat($email, $key);
   // 最大文字数チェック
-  validMaxLen($email, $key, 30);
+  validMaxLen($email, $key);
 }
 
 

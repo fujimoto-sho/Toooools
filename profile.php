@@ -7,7 +7,7 @@
 require_once('function.php');
 
 // 開始ログ
-debugLogStart('プロフィール');
+debugLogStart('プロフィールページ');
 
 // いいねを表示するか
 $isLikeShow = (!empty($_GET['show']) && $_GET['show'] === 'like') ? true : false;
@@ -19,9 +19,9 @@ if (!empty($u_id)) {
   $dbUser = getUser($u_id);
 }
 
-// ユーザーデータを取得できなかったら一覧ページへ遷移
+// ユーザーデータを取得できなかったら投稿一覧ページへ遷移
 if (empty($dbUser)) {
-  debugLog('トップページに遷移');
+  debugLog('投稿一覧ページに遷移します');
   header("Location:index.php");
 } else {
   $postData = getPostInProfile($u_id, $isLikeShow);

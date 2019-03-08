@@ -1,6 +1,6 @@
 <!-- フッター -->
 <footer class="footer">
-  Copyright fujisho All Rights Reserved.
+  Copyright 2019 fujisho344. All Rights Reserved.
 </footer>
 
 <script src="js/jquery-3.3.1.min.js"></script>

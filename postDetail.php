@@ -33,7 +33,7 @@ if (!empty($_POST) && empty($_POST['delete_tool_id'])) {
   validEmpty($reply, 'reply');
 
   if (empty($err_msg)) {
-    // ツール名
+    // リプライ
     // 最大文字数チェック
     validMaxLen($reply, 'reply', 140);
 
@@ -118,7 +118,7 @@ if (!empty($_POST['delete_tool_id']) && $_GET['t_id'] === $_POST['delete_tool_id
 
         // フラッシュメッセージセット
         $_SESSION['flash_msg'] = SUCMSG['POST_DELETE'];
-        debugLog('一覧ページに遷移します。');
+        debugLog('プロフィールページに遷移します。');
 
         header("Location:profile.php");
       } else {

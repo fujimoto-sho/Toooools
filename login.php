@@ -7,13 +7,14 @@
 require_once('function.php');
 
 // 開始ログ
-debugLogStart('ユーザ登録ページ');
+debugLogStart('ログインページ');
 
 // ログイン認証
 require_once('auth.php');
 
 if (!empty($_POST)) {
-  debugLog('POST：' . print_r($_POST, true));
+  // debugLog('POST：' . print_r($_POST, true));
+  debugLog('POST OK');
 
   $email = $_POST['email'];
   $pass = $_POST['pass'];

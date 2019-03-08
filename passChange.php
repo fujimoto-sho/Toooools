@@ -13,7 +13,8 @@ debugLogStart('パスワード変更ページ');
 require_once('auth.php');
 
 if (!empty($_POST)) {
-  debugLog('POST：' . print_r($_POST, true));
+  // debugLog('POST：' . print_r($_POST, true));
+  debugLog('POST OK');
 
   $pass_old = $_POST['pass_old'];
   $pass_new = $_POST['pass_new'];
