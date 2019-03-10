@@ -9,6 +9,12 @@ require_once('function.php');
 // 開始ログ
 debugLogStart('ユーザ登録ページ');
 
+// ログインしてたらプロフィールに遷移
+if (isLogin()) {
+  debugLog('プロフィールに遷移します');
+  header("Location:profile.php");
+}
+
 if (!empty($_POST)) {
   // debugLog('POST：' . print_r($_POST, true));
   debugLog('POST OK');

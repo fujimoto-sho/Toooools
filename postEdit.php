@@ -20,7 +20,7 @@ $dbFormData = (!empty($t_id)) ? getTool($t_id) : '';
 $isCreate = (empty($dbFormData)) ? true : false;
 
 // ツールデータが存在するが、ユーザIDが違う場合、投稿詳細ページへ遷移させる
-if (!$isCreate && $dbFormData['user_id'] === $_SESSION['user_id']) {
+if (!$isCreate && $dbFormData['user_id'] !== $_SESSION['user_id']) {
   debugLog('投稿詳細に遷移します');
   header("Location:postDetail.php?t_id=" . $t_id);
 }
