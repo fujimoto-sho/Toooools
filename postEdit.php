@@ -19,12 +19,6 @@ $dbFormData = (!empty($t_id)) ? getTool($t_id) : '';
 // 該当するツールのデータが存在したら編集、しなかったら新規
 $isCreate = (empty($dbFormData)) ? true : false;
 
-// ツールデータが存在するが、ユーザIDが違う場合、投稿詳細ページへ遷移させる
-if (!$isCreate && $dbFormData['user_id'] !== $_SESSION['user_id']) {
-  debugLog('投稿詳細に遷移します');
-  header("Location:postDetail.php?t_id=" . $t_id);
-}
-
 // POSTされていなくても画像を表示する
 $img = (!empty($dbFormData['img'])) ? $dbFormData['img'] : '';
 $mime = (!empty($dbFormData['mime'])) ? $dbFormData['mime'] : '';
