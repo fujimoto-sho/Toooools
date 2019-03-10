@@ -56,7 +56,8 @@ if (!empty($_POST)) {
 「Toooools」をご利用頂き誠にありがとうございます。
 
 以下、パスワード再設定用のアドレスになります。
-http://localhost:8888/toooools/passRemindChange.php?k={$auth_key}
+
+{$_SERVER['SERVER_NAME']}/passRemindChange.php?k={$auth_key}
 
 
 今後とも、Tooooolsをよろしくお願いいたします。
@@ -64,6 +65,7 @@ http://localhost:8888/toooools/passRemindChange.php?k={$auth_key}
 ---------------------------------------------
 
 Toooools
+
 {$_SERVER['SERVER_NAME']}
 
 ---------------------------------------------
