@@ -73,7 +73,7 @@ require_once('header.php');
     <p class="sidebar-page-count">
       <?php echo $minPostNum; ?> -
       <?php echo $maxPostNum; ?> 件（全
-      <?php echo $postCount; ?>件）
+      <?php echo $postCount; ?> 件）
     </p>
   </div>
 

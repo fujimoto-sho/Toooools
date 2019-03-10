@@ -62,7 +62,7 @@ if (!empty($_POST)) {
           if (!empty($stmt)) {
             debugLog('パスワード変更成功');
 
-            $from = 'fujisho344@gmail.com';
+            // メール送信に必要な情報を変数に格納
             $to = $_SESSION['auth_email'];
             $subject = 'パスワード再設定完了';
             $message = <<<EOF
@@ -82,7 +82,7 @@ Toooools
 EOF;
 
             // メール送信
-            sendMail($from, $to, $subject, $message);
+            sendMail($to, $subject, $message);
 
             // フラッシュメッセージセット
             $_SESSION['flash_msg'] = SUCMSG['PASS_REMIND'];

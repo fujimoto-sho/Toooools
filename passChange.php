@@ -64,7 +64,7 @@ if (!empty($_POST)) {
           if (!empty($stmt->rowCount())) {
             debugLog('パスワード変更成功');
 
-            $from = 'fujisho344@gmail.com';
+            // メール送信に必要な情報を変数に格納
             $to = $dbUser['email'];
             $subject = 'パスワード変更の確認 | Toooools';
             $message = <<<EOF
@@ -83,7 +83,7 @@ Toooools
 ---------------------------------------------
 EOF;
 
-            sendMail($from, $to, $subject, $message);
+            sendMail($to, $subject, $message);
 
             // フラッシュメッセージセット
             $_SESSION['flash_msg'] = SUCMSG['PASS_CHANGE'];

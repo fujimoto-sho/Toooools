@@ -20,7 +20,7 @@ if (!empty($_POST)) {
     $dbh = dbConnect();
     $sql1 = 'UPDATE users SET delete_flg = 1 WHERE id = :uid';
     $sql2 = 'UPDATE tools SET delete_flg = 1 WHERE user_id = :uid';
-    $sql3 = 'UPDATE likes SET delete_flg = 1 WHERE user_id = :uid';
+    $sql3 = 'DELETE FROM likes WHERE user_id = :uid';
     $data = array(
       ':uid' => $_SESSION['user_id'],
     );

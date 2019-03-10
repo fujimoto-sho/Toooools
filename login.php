@@ -63,7 +63,7 @@ if (!empty($_POST)) {
           header("Location:profile.php");
         } else {
           debugLog('パスワードNG');
-          $err_msg['pass'] = ERRMSG['LOGIN'];
+          $err_msg['common'] = ERRMSG['LOGIN'];
         }
       } catch (Exception $e) {
         error_log('エラー発生：' . $e->getMessage());
