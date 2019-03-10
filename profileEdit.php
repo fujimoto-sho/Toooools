@@ -30,8 +30,8 @@ if (!empty($_POST)) {
 
   $email = $_POST['email'];
   $name = $_POST['name'];
-  $like_tool = $_POST['like_tool'];
   $bio = $_POST['bio'];
+  $like_tool = $_POST['like_tool'];
   $img = getUploadImage($dbFormData, true);
   $mime = getUploadImage($dbFormData, false);
 
@@ -54,16 +54,16 @@ if (!empty($_POST)) {
       validMaxLen($name, 'name', 30);
     }
 
-    // 一番好きなツール
-    if ($_POST['like_tool'] !== $dbFormData['like_tool']) {
-      // 最大文字数チェック
-      validMaxLen($like_tool, 'like_tool', 30);
-    }
-
     // 自己紹介
     if ($_POST['bio'] !== $dbFormData['bio']) {
       // 最大文字数チェック
       validMaxLen($bio, 'bio', 150);
+    }
+
+    // 一番好きなツール
+    if ($_POST['like_tool'] !== $dbFormData['like_tool']) {
+      // 最大文字数チェック
+      validMaxLen($like_tool, 'like_tool', 30);
     }
 
     if (empty($err_msg)) {
@@ -156,15 +156,6 @@ require_once('header.php');
         <input type="text" name="name" value="<?php echo getFormData('name'); ?>">
       </label>
 
-      <!-- 一番好きなツール -->
-      <div class="input-msg">
-        <?php echo getErrMsg('like_tool'); ?>
-      </div>
-      <label class="form-label <?php echo getErrClassName('like_tool'); ?>">
-        一番好きなツール
-        <input type="text" name="like_tool" value="<?php echo getFormData('like_tool'); ?>">
-      </label>
-
       <!-- 自己紹介 -->
       <div class="input-msg">
         <?php echo getErrMsg('bio'); ?>
@@ -172,6 +163,15 @@ require_once('header.php');
       <label class="form-label <?php echo getErrClassName('bio'); ?>">
         自己紹介
         <textarea name="bio" cols="30" rows="5"><?php echo getFormData('bio'); ?></textarea>
+      </label>
+
+      <!-- 一番好きなツール -->
+      <div class="input-msg">
+        <?php echo getErrMsg('like_tool'); ?>
+      </div>
+      <label class="form-label <?php echo getErrClassName('like_tool'); ?>">
+        一番好きなツール
+        <input type="text" name="like_tool" value="<?php echo getFormData('like_tool'); ?>">
       </label>
 
       <!-- アバター -->
