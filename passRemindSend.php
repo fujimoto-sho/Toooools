@@ -26,7 +26,7 @@ if (!empty($_POST)) {
         ':email' => $email
       );
       $stmt = queryPost($dbh, $sql, $data);
-      if (!empty($stmt->rowCount())) {
+      if (empty($stmt->rowCount())) {
         $err_msg['email'] = ERRMSG['EMAIL_NOT_EXISTS'];
       }
     } catch (Exception $e) {

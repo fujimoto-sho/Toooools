@@ -81,8 +81,7 @@ session_regenerate_id();
 //-------------------------------------
 // デバッグの出力判定
 // 本番時はfalseにしてログを出さないようにする
-// $debugLogWrite = ($isProduction) ? false : true;
-$debugLogWrite = true;
+$debugLogWrite = ($isProduction) ? false : true;
 
 
 // デバッグログ出力
