@@ -18,7 +18,8 @@ ini_set('error_log', 'log/php_' . date('Ymd') . '.log');
 // エラーメッセージ
 $err_msg = array();
 // 本番環境判定
-$isProduction = (getenv('PHP_ENV') === 'heroku') ? true : false;
+// $isProduction = (getenv('PHP_ENV') === 'heroku') ? true : false;
+$isProduction = false;
 
 //-------------------------------------
 // 定数
@@ -604,6 +605,27 @@ function sendMail($to, $subject, $comment)
   }
 }
 
+// 本番環境でメール送信
+function sendMailProduction($to, $subject, $comment)
+{
+  require('vendor/autoload.php');
+
+  $email = new \SendGrid\Mail\Mail();
+  $email->setFrom(MAIL_FROM);
+  $email->addTo($to);
+  $email->setSubject($subject);
+  $email->addContent("text/plain", $comment);
+  $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+  try {
+    $response = $sendgrid->send($email);
+    debugLog($response->statusCode());
+    debugLog(print_r($response->headers(), true));
+    debugLog($response->body());
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+  }
+}
+
 // ローカル環境でメール送信
 function sendMailDevelopment($to, $subject, $comment)
 {
@@ -620,26 +642,6 @@ function sendMailDevelopment($to, $subject, $comment)
   }
 }
 
-// 本番環境でメール送信
-function sendMailProduction($to, $subject, $comment)
-{
-  require('vendor/autoload.php');
-
-  $email = new \SendGrid\Mail\Mail();
-  $email->setFrom(MAIL_FROM);
-  $email->addTo($to);
-  $email->setSubject($subject);
-  $email->addContent("text/plain", $comment);
-  $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
-  try {
-    $response = $sendgrid->send($email);
-    // print $response->statusCode() . "\n";
-    // print_r($response->headers());
-    // print $response->body() . "\n";
-  } catch (Exception $e) {
-    error_log('エラー発生：' . $e->getMessage());
-  }
-}
 
 //-------------------------------------
 // その他
