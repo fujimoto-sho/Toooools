@@ -57,7 +57,7 @@ if (!empty($_POST)) {
 
 以下、パスワード再設定用のアドレスになります。
 
-{$_SERVER['SERVER_NAME']}/passRemindChange.php?k={$auth_key}
+https://{$_SERVER['SERVER_NAME']}/passRemindChange.php?k={$auth_key}
 
 
 今後とも、Tooooolsをよろしくお願いいたします。
@@ -66,7 +66,7 @@ if (!empty($_POST)) {
 
 Toooools
 
-{$_SERVER['SERVER_NAME']}
+https://{$_SERVER['SERVER_NAME']}
 
 ---------------------------------------------
 EOF;

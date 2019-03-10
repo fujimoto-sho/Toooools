@@ -77,7 +77,7 @@ if (!empty($_POST)) {
 
 Toooools
 
-{$_SERVER['SERVER_NAME']}
+https://{$_SERVER['SERVER_NAME']}
 
 ---------------------------------------------
 EOF;
