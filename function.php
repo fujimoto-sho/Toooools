@@ -17,7 +17,8 @@ ini_set('error_log', 'log/php_' . date('Ymd') . '.log');
 //-------------------------------------
 // エラーメッセージ
 $err_msg = array();
-
+// 本番環境判定
+$isProduction = (getenv('PHP_ENV') === 'heroku') ? true : false;
 
 //-------------------------------------
 // 定数
@@ -28,6 +29,8 @@ define('LOGIN_TIME_DEFAULT', 60 * 60);
 define('LOGIN_TIME_LONG', 60 * 60 * 24 * 30);
 // 一覧ページで1ページに表示する最大件数
 define('ONE_PAGE_COUNT', 10);
+// 送信用メールアドレス
+define('MAIL_FROM', 'fujisho344test@gmail.com');
 
 // エラーメッセージ
 define('ERRMSG', array(
@@ -48,7 +51,7 @@ define('ERRMSG', array(
 
 // サクセスメッセージ
 define('SUCMSG', array(
-  'PROF_EDIT'   => 'プロフィールを変更しました。',
+  'PROF_EDIT'   => 'プロフィールを編集しました。',
   'PASS_CHANGE' => 'パスワードを変更しました。',
   'PASS_REMIND' => 'パスワードの再設定が完了しました。',
   'POST_INSERT' => '投稿が完了しました。',
@@ -78,8 +81,7 @@ session_regenerate_id();
 //-------------------------------------
 // デバッグの出力判定
 // 本番時はfalseにしてログを出さないようにする
-$debugLogWrite = true;
-if (getenv('PHP_ENV') === 'heroku') $debugLogWrite = false;
+$debugLogWrite = ($isProduction) ? false : true;
 
 // デバッグログ出力
 function debugLog($msg)
@@ -222,18 +224,16 @@ function validEmail($email, $key)
 function dbConnect()
 {
   // 本番環境と開発環境でつなぐDBを切り替える
-  switch (getenv('PHP_ENV')) {
-    case 'heroku':
-      $url = parse_url(getenv('CLEARDB_DATABASE_URL'));
-      $dsn = sprintf('mysql:dbname=' . substr($url['path'], 1) . ';host=' . $url['host']) . ';charset=utf8';
-      $user = $url['user'];
-      $pass = $url['pass'];
-      break;
-    default:
-      $dsn = 'mysql:dbname=toooools;host=localhost;charset=utf8';
-      $user = 'root';
-      $pass = 'root';
-      break;
+  global $isProduction;
+  if ($isProduction) {
+    $url = parse_url(getenv('CLEARDB_DATABASE_URL'));
+    $dsn = sprintf('mysql:dbname=' . substr($url['path'], 1) . ';host=' . $url['host']) . ';charset=utf8';
+    $user = $url['user'];
+    $pass = $url['pass'];
+  } else {
+    $dsn = 'mysql:dbname=toooools;host=localhost;charset=utf8';
+    $user = 'root';
+    $pass = 'root';
   }
 
   $options = array(
@@ -467,7 +467,7 @@ function getPostInProfile($u_id, $isLikeShow)
     } else {
       $sql .= ' AND t.user_id = :uid';
     }
-    $sql .= ' ORDER BY t.created_at';
+    $sql .= ' ORDER BY t.created_at DESC';
     $data = array(
       ':uid' => $u_id
     );
@@ -586,22 +586,33 @@ function changePassword($pass, $u_id)
 // メール送信
 //-------------------------------------
 // メール送信
-function sendMail($from, $to, $subject, $comment)
+function sendMail($to, $subject, $comment)
 {
   debugLog('メール送信処理開始');
 
   // 空の項目が存在したら処理しない
-  if (empty($from)) return;
   if (empty($to)) return;
   if (empty($subject)) return;
   if (empty($comment)) return;
 
+  // 本番環境と開発環境でメール送信方法を変える
+  global $isProduction;
+  if ($isProduction) {
+    sendMailProduction($to, $subject, $comment);
+  } else {
+    sendMailDevelopment($to, $subject, $comment);
+  }
+}
+
+// ローカル環境でメール送信
+function sendMailDevelopment($to, $subject, $comment)
+{
   // 文字化け回避
   mb_language('Japanese');
   mb_internal_encoding('UTF-8');
 
   // メール送信
-  $isSend = mb_send_mail($to, $subject, $comment, 'From: ' . $from);
+  $isSend = mb_send_mail($to, $subject, $comment, 'From: ' . MAIL_FROM);
   if ($isSend) {
     debugLog('メール送信成功');
   } else {
@@ -609,6 +620,26 @@ function sendMail($from, $to, $subject, $comment)
   }
 }
 
+// 本番環境でメール送信
+function sendMailProduction($to, $subject, $comment)
+{
+  require('vendor/autoload.php');
+
+  $email = new \SendGrid\Mail\Mail();
+  $email->setFrom(MAIL_FROM);
+  $email->addTo($to);
+  $email->setSubject($subject);
+  $email->addContent("text/plain", $comment);
+  $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+  try {
+    $response = $sendgrid->send($email);
+    // print $response->statusCode() . "\n";
+    // print_r($response->headers());
+    // print $response->body() . "\n";
+  } catch (Exception $e) {
+    error_log('エラー発生：' . $e->getMessage());
+  }
+}
 
 //-------------------------------------
 // その他

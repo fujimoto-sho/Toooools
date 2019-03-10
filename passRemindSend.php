@@ -49,7 +49,6 @@ if (!empty($_POST)) {
       debugLog('セッション：' . print_r($_SESSION, true));
 
       // メール送信に必要な情報を変数に格納
-      $from = 'fujisho344@gmail.com';
       $to = $email;
       $subject = 'パスワード再設定';
       $message = <<<EOF
@@ -70,7 +69,7 @@ Toooools
 ---------------------------------------------
 EOF;
       // メール送信
-      sendMail($from, $to, $subject, $message);
+      sendMail($to, $subject, $message);
 
       // メール送信フラグ
       $isSendMail = true;
