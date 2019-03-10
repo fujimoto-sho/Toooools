@@ -88,6 +88,11 @@ EOF;
             // フラッシュメッセージセット
             $_SESSION['flash_msg'] = SUCMSG['PASS_REMIND'];
 
+            // 再設定用セッション削除
+            unset($_SESSION['auth_key']);
+            unset($_SESSION['auth_email']);
+            unset($_SESSION['auth_limit']);
+
             debugLog('ログインページに遷移します。');
             header("Location:login.php");
           } else {
