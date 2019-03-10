@@ -18,8 +18,7 @@ ini_set('error_log', 'log/php_' . date('Ymd') . '.log');
 // エラーメッセージ
 $err_msg = array();
 // 本番環境判定
-// $isProduction = (getenv('PHP_ENV') === 'heroku') ? true : false;
-$isProduction = false;
+$isProduction = (getenv('PHP_ENV') === 'heroku') ? true : false;
 
 //-------------------------------------
 // 定数
@@ -82,7 +81,9 @@ session_regenerate_id();
 //-------------------------------------
 // デバッグの出力判定
 // 本番時はfalseにしてログを出さないようにする
-$debugLogWrite = ($isProduction) ? false : true;
+// $debugLogWrite = ($isProduction) ? false : true;
+$debugLogWrite = true;
+
 
 // デバッグログ出力
 function debugLog($msg)
