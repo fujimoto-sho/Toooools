@@ -20,7 +20,8 @@ if (!empty($_POST)) {
     $dbh = dbConnect();
     $sql1 = 'UPDATE users SET delete_flg = 1 WHERE id = :uid';
     $sql2 = 'UPDATE tools SET delete_flg = 1 WHERE user_id = :uid';
-    $sql3 = 'DELETE FROM likes WHERE user_id = :uid';
+    $sql3 = 'UPDATE replies SET delete_flg = 1 WHERE user_id = :uid';
+    $sql4 = 'DELETE FROM likes WHERE user_id = :uid';
     $data = array(
       ':uid' => $_SESSION['user_id'],
     );
@@ -34,6 +35,7 @@ if (!empty($_POST)) {
       $stmt1 = queryPost($dbh, $sql1, $data);
       $stmt2 = queryPost($dbh, $sql2, $data);
       $stmt3 = queryPost($dbh, $sql3, $data);
+      $stmt4 = queryPost($dbh, $sql4, $data);
 
       // 全て成功したらコミット
       $dbh->commit();
@@ -48,6 +50,9 @@ if (!empty($_POST)) {
     // usersテーブルが処理されていたら成功とする
     if (!empty($stmt1->rowCount())) {
       debugLog('退会完了');
+
+      // セッション削除
+      session_destroy();
 
       debugLog('ログイン画面に遷移します。');
       header("Location:login.php");
