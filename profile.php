@@ -46,13 +46,13 @@ require_once('header.php');
     <nav class="prof-top-nav">
       <ul>
         <li>
-          <a href="profile.php<?php if (!empty($u_id)) echo '?u_id=' . sanitize($u_id); ?>" class="prof-top-link">
+          <a href="profile.php<?php if (!empty($u_id)) echo '?u_id=' . sanitize($u_id); ?>" class="prof-top-link <?php if (!$isLikeShow) echo 'prof-top-link-active'; ?>">
             投稿<br>
             <?php echo sanitize((!empty(getPostInProfile($u_id, false))) ? count(getPostInProfile($u_id, false)) : 0); ?>
           </a>
         </li>
         <li>
-          <a href="profile.php?show=like<?php if (!empty($u_id)) echo '&u_id=' . sanitize($u_id); ?>" class="prof-top-link">
+          <a href="profile.php?show=like<?php if (!empty($u_id)) echo '&u_id=' . sanitize($u_id); ?>" class="prof-top-link <?php if ($isLikeShow) echo 'prof-top-link-active'; ?>">
             いいね<br>
             <?php echo getLikeCount('', $u_id); ?>
           </a>
