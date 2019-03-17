@@ -1,7 +1,7 @@
 # Tooooolsについて
 
 ## URL
-- アプリ
+- サイトURL
   - https://toooools.herokuapp.com/
 - ワイヤーフレーム
   - https://fujisho344.hateblo.jp/entry/2019/03/07/231538
