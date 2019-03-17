@@ -496,7 +496,20 @@ function getReplies($t_id)
 
   try {
     $dbh = dbConnect();
-    $sql = 'SELECT r.message, r.created_at, u.name user_name, u.img avatar_img, u.mime avatar_img_mime FROM replies r LEFT JOIN users u ON u.id = r.tool_id WHERE r.tool_id = :tid AND r.delete_flg = 0';
+    $sql = 'SELECT
+      r.message
+    , r.created_at
+    , u.name user_name
+    , u.img avatar_img
+    , u.mime avatar_img_mime
+    FROM replies r
+    LEFT JOIN users u
+    ON u.id = r.user_id
+    AND u.delete_flg = 0
+    WHERE r.tool_id = :tid
+    AND r.delete_flg = 0
+    ORDER BY r.created_at ASC';
+
     $data = array(
       ':tid' => $t_id,
     );
