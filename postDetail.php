@@ -180,7 +180,7 @@ require_once('header.php');
               <i class="fas fa-reply"></i>
               reply
             </div>
-            <img src="<?php echo showImage($postData['avatar_img'], $postData['avatar_img_mime'], 'avatar'); ?>" alt="" class="post-user-img">
+            <img src="<?php echo showImage($row['avatar_img'], $row['avatar_img_mime'], 'avatar'); ?>" alt="" class="post-user-img">
             <p class="post-user-name">
               <?php echo sanitize($row['user_name']); ?>
             </p>
