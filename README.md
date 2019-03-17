@@ -6,6 +6,13 @@
 - ワイヤーフレーム
   - https://fujisho344.hateblo.jp/entry/2019/03/07/231538
 
+## テストユーザー
+- メールアドレス
+  - example@example.com
+- パスワード
+  - example
+
+
 ## どんなアプリか
 - お気に入りのツールを共有するアプリ
 
