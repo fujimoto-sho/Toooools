@@ -41,4 +41,4 @@
 - データベース：MySQL
 - バージョン管理：Git
 - エディタ：Visual Studio Code
-- ローカル開発環境:MAMP
+- ローカル開発環境：MAMP
