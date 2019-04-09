@@ -37,7 +37,8 @@
 - お気に入り登録
 
 ## 技術・環境
-- 言語：PHP
+- 言語：PHP、HTML、CSS、JavaScript、jQuery
 - データベース：MySQL
 - バージョン管理：Git
 - エディタ：Visual Studio Code
+- ローカル開発環境:MAMP
